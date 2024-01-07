@@ -10,6 +10,7 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "framer-motion": "^10.17.9",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
