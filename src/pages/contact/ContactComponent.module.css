@@ -1,0 +1,93 @@
+.contactMain {
+  width: 100%;
+}
+
+.basicContact {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.contactHeadingDiv {
+  display: flex;
+}
+
+.addressHeadingDiv {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.contactHeadingDiv > *,
+.addressHeadingDiv > * {
+  flex: 1;
+}
+
+.contactHeadingImgDiv,
+.contactHeadingTextDiv,
+.addressHeadingTextDiv {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contactHeadingImgDiv > *,
+.addressHeadingDiv > * {
+  max-width: 100%;
+  height: auto;
+}
+
+.contactHeadingText,
+.addressHeadingText {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: "Open Sans Medium";
+  line-height: 1.1;
+  margin-top: 60px;
+}
+
+.contactHeaderDetailText {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Open Sans Medium";
+}
+
+.resumeBtnDiv,
+.addressBtnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+
+/* Add media queries */
+@media (max-width: 1380px) {
+  .contactHeadingText {
+    font-size: 50px;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactHeadingText,
+  .addressHeadingText {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .contactHeadingDiv,
+  .addressHeadingDiv {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  .contactHeaderDetailText {
+    font-size: 16px;
+    margin-left: 0px;
+    margin-right: 0px;
+    line-height: normal;
+    text-align: center;
+  }
+}

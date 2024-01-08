@@ -1,0 +1,26 @@
+.competitiveSitesMainDiv {
+}
+
+.devIcons {
+  padding-left: 0;
+  list-style: none;
+  font-size: 3rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.competitiveSitesInline {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-family: "Open Sans Regular";
+}
+
+.competitiveSitesInline > i {
+  color: #868e96;
+}
+
+.competitiveSitesInline > i:hover {
+  color: #645beb;
+}

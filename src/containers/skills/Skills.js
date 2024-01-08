@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 
 import styles from "./Skills.module.css";
 import SkillSection from "./SkillSection";
+import { chosenTheme } from "../../styles/theme";
 
 export default function Skills(props) {
-  const theme = props.theme;
+  const theme = chosenTheme;
 
   return (
     <div className={styles.main} id="skills">

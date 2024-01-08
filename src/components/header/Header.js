@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 import styles from "./Header.module.css";
 import SeoHeader from "../seoHeader/SeoHeader";
 import { greeting } from "../../portfolio";
+import { chosenTheme } from "../../styles/theme";
 
 const Header = (props) => {
   const [currentPath, setCurrentPath] = useState("");
-  const theme = props.theme;
+  const theme = chosenTheme;
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);

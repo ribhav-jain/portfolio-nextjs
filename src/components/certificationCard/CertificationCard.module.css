@@ -1,0 +1,92 @@
+.certCard {
+  width: 30%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #d9dbdf;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #bfafb2;
+  margin-bottom: 30px;
+  flex: 0 0 30%;
+}
+
+.certHeader {
+  margin: 0px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.logoImg {
+  width: auto;
+  height: 100px;
+}
+
+.certBody {
+  margin: 0px;
+}
+
+.certBodyTitle {
+  font-family: "Open Sans Regular";
+  font-size: 20px;
+  margin: 10px;
+}
+
+.certBodySubtitle {
+  font-family: "Open Sans Regular";
+  font-size: 18px;
+  color: #808080;
+  margin: 10px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.contentOverlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.content:hover .contentOverlay {
+  opacity: 1;
+}
+
+.contentDetails {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+
+.content:hover .contentDetails {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.fadeInTop {
+  top: 20%;
+}
+
+@media (max-width: 768px) {
+  .certCard {
+    width: 100%;
+  }
+}

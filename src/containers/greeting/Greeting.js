@@ -6,9 +6,10 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import { greeting } from "../../portfolio";
 import FeelingProud from "./FeelingProud";
+import { chosenTheme } from "../../styles/theme";
 
-export default function Greeting(props) {
-  const theme = props.theme;
+export default function Greeting() {
+  const theme = chosenTheme;
 
   return (
     <motion.div

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import styles from "./Footer.module.css";
 import { greeting } from "../../portfolio";
+import { chosenTheme } from "../../styles/theme";
 
 export default function Footer(props) {
   return (
@@ -14,7 +15,7 @@ export default function Footer(props) {
       >
         <p
           className={styles.footerText}
-          style={{ color: props.theme.secondaryText }}
+          style={{ color: chosenTheme.secondaryText }}
         >
           Copyright{" "}
           <span role="img" aria-label="copyright">

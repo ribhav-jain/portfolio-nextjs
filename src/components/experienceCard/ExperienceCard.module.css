@@ -1,0 +1,157 @@
+.experienceCard {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  border: 1px solid #d9dbdf;
+  box-shadow: 5px 5px 5px #d9dbdf;
+  flex-direction: row;
+}
+
+.experienceCardLogoDiv {
+  margin: 10px;
+}
+
+.experienceCardBodyDiv {
+  width: 100%;
+}
+
+.experienceCardHeaderDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.experienceCardLogo {
+  width: 70px;
+}
+
+.experienceCardTitle {
+  font-family: "Open Sans Regular";
+  margin-top: 10px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  margin-right: 7px;
+  text-align: left;
+}
+
+.experienceCardCompany {
+  font-family: "Open Sans Regular";
+  margin: 0;
+  text-align: left;
+}
+
+.experienceCardDuration {
+  font-family: "Open Sans Regular";
+  margin-top: 10px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: right;
+  color: #868e96;
+}
+
+.experienceCardHeadingLeft {
+  float: left;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+.experienceCardHeadingRight {
+  float: right;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.experienceCardLocation {
+  font-family: "Open Sans Regular";
+  margin: 0;
+  text-align: right;
+  color: #868e96;
+}
+
+.experienceCardDescription {
+  margin-top: 5px;
+  margin-left: 10px;
+  text-align: justify;
+  margin-right: 20px;
+  font-family: "Open Sans Regular";
+}
+
+.experienceCardCompany > a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+.experienceCardCompany > a:hover {
+  color: #000;
+}
+
+.experienceCardCompany > a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.experienceCardCompany > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+@media (max-width: 768px) {
+  .experienceCard {
+    margin-bottom: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .experienceCardLogo {
+    width: 100px;
+  }
+
+  .experienceCardHeadingLeft {
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .experienceCardHeadingRight {
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .experienceCardTitle {
+    text-align: center;
+  }
+
+  .experienceCardCompany {
+    text-align: center;
+  }
+
+  .experienceCardDuration {
+    margin-top: 2px;
+    text-align: center;
+  }
+
+  .experienceCardLocation {
+    text-align: center;
+  }
+
+  .experienceCardHeaderDiv {
+    flex-direction: column;
+  }
+
+  .experienceCardDescription {
+    margin-left: 14px;
+    margin-right: 14px;
+    text-align: justify;
+  }
+}

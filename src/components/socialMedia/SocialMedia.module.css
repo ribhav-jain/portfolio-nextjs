@@ -1,0 +1,17 @@
+.socialMediaDiv {
+  font-size: 2em;
+}
+
+.iconButton {
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-top: 6px;
+  font-size: 2rem;
+  color: #74808a;
+}
+
+@media (max-width: 768px) {
+  .socialMediaDiv {
+    text-align: center;
+  }
+}
