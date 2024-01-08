@@ -1,33 +1,33 @@
 // Themes
 
 export const lightTheme = {
-  body: "#FFF",
-  text: "#292F33",
-  secondaryText: "#5F6368",
+  body: "#FFFFFF",
+  text: "#333333",
+  secondaryText: "#555555",
   imageHighlight: "#0E6BA8",
-  buttonColor: "#0A66C2",
-  hoverButtonColor: "#084d92",
-  headerColor: "#C0C0C0",
-  highlight: "#EEEEEE",
-  dark: "#202124",
-  compImgHighlight: "#E1D9D1",
-  jacketColor: "#0A2472",
-  CompImgColor: "#292F33",
+  buttonColor: "#2563EB",
+  hoverButtonColor: "#1E40AF",
+  headerColor: "#F0F0F0",
+  highlight: "#FAFAFA",
+  dark: "#000000",
+  compImgHighlight: "#F5F5F5",
+  jacketColor: "#5865F2",
+  CompImgColor: "#F0F0F0",
 };
 
 export const darkTheme = {
   body: "#121212",
-  text: "#FFFFFFFF",
-  secondaryText: "#FFFFFFb3",
-  buttonColor: "#FFFFFFF2",
-  hoverButtonColor: "#FFFFFFdb",
-  imageHighlight: "#3700b3",
+  text: "#E4E6E7",
+  secondaryText: "#BEC3C9",
+  buttonColor: "#8AB4F8",
+  hoverButtonColor: "#7290C3",
+  imageHighlight: "#BB86FC",
   headerColor: "#FF990070",
-  highlight: "#2E2E2E",
+  highlight: "#242424",
   dark: "#000000",
-  compImgHighlight: "#FFFFFF1a",
-  jacketColor: "#8d99ae",
-  CompImgColor: "#191919",
+  compImgHighlight: "#2A2A2A",
+  jacketColor: "#9FA8DA",
+  CompImgColor: "#1A1A1A",
 };
 
 export const chosenTheme = lightTheme;

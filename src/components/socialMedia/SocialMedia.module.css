@@ -1,17 +1,21 @@
 .socialMediaDiv {
   font-size: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .iconButton {
-  margin-bottom: 10px;
-  margin-right: 20px;
-  margin-top: 6px;
+  margin: 10px;
   font-size: 2rem;
   color: #74808a;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
   .socialMediaDiv {
-    text-align: center;
+    justify-content: center;
   }
 }
