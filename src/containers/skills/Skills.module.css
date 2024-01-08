@@ -1,0 +1,73 @@
+.main {
+  width: 90%;
+  padding: 20px 10px;
+  margin: 0px auto;
+  margin-top: 4rem;
+}
+
+.skillsHeaderDiv {
+  text-align: center;
+}
+
+.skillsHeader {
+  font-size: 60px;
+  line-height: normal;
+  font-family: "Open Sans Regular";
+}
+
+.skillsMainDiv {
+  display: flex;
+  overflow: hidden;
+}
+
+.skillsMainDiv > * {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+.skillsImageDiv > * {
+  max-width: 100%;
+  height: auto;
+  margin-top: 100px;
+}
+
+.skillsHeading {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: "Open Sans Regular";
+  line-height: normal;
+}
+
+.skillsTextDiv {
+  margin-left: 50px;
+  font-family: "Open Sans Regular";
+}
+
+/* Responsive Styles */
+@media (max-width: 1380px) {
+  .skillsHeading,
+  .skillsHeader {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsMainDiv {
+    flex-direction: column;
+  }
+
+  .skillsTextDiv,
+  .skillsImageDiv {
+    margin: 0 20px;
+  }
+
+  .skillsHeading,
+  .skillsHeader {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .skillsImageDiv {
+    order: 2;
+  }
+}

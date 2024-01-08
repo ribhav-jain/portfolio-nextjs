@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "Great Vibes";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("Great Vibes"),
+    url("/fonts/GreatVibes/GreatVibes-Regular.ttf") format("truetype");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: "Roboto";
+  src:
+    local("Roboto"),
+    url("/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Bold";
+  src:
+    local("Open Sans Bold"),
+    url("/fonts/OpenSans/OpenSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Italic";
+  src:
+    local("Open Sans Italic"),
+    url("/fonts/OpenSans/OpenSans-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Medium";
+  src:
+    local("Open Sans Medium"),
+    url("/fonts/OpenSans/OpenSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Regular";
+  src:
+    local("Open Sans Regular"),
+    url("/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+}
+
+html,
+body {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@media (max-width: 1380px) {
+  html,
+  body {
+    font-size: 16px;
+    line-height: normal;
+  }
 }

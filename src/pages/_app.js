@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import TagManager from "react-gtm-module";
+import "../styles/globals.css";
 
 import { chosenTheme } from "../styles/theme";
 
