@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import styles from "./TopButton.module.css";
+import { chosenTheme } from "../../styles/theme";
 
-export default function TopButton({ theme }) {
+export default function TopButton() {
+  const theme = chosenTheme;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
