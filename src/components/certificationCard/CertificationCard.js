@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "./CertificationCard.module.css";
 
 export default function CertificationCard(props) {
@@ -20,20 +21,20 @@ export default function CertificationCard(props) {
             className={styles.certHeader}
             style={{ backgroundColor: certificate.color_code }}
           >
-            <img
-              className={styles.logoImg}
-              src={require(`../../../public/images/${certificate.logo_path}`)}
-              alt={certificate.alt_name}
-            />
+            <div className={styles.logoImg}>
+              <Image
+                src={`/images/${certificate.logo_path}`}
+                alt={certificate.alt_name}
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
           </div>
           <div className={`${styles.contentDetails} ${styles.fadeInTop}`}>
             <span
               className="iconify"
               data-icon="akar-icons:info"
-              style={{
-                color: "#fff",
-                fontSize: "2rem",
-              }}
+              style={{ color: "#fff", fontSize: "2rem" }}
             ></span>
           </div>
         </a>

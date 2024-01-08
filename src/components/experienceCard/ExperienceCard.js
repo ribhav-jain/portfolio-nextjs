@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "./ExperienceCard.module.css";
 
 export default function ExperienceCard(props) {
@@ -15,10 +16,13 @@ export default function ExperienceCard(props) {
         className={styles.experienceCard}
       >
         <div className={styles.experienceCardLogoDiv}>
-          <img
+          <Image
+            src={`/images/${experience.logo_path}`} // Adjust the path if necessary
+            alt={experience.title}
+            width={200}
+            height={200}
+            objectFit="contain"
             className={styles.experienceCardLogo}
-            src={require(`../../../public/images/${experience["logo_path"]}`)}
-            alt={experience["title"]}
           />
         </div>
         <div className={styles.experienceCardBodyDiv}>

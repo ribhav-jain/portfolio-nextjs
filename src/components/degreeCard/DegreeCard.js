@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "./DegreeCard.module.css";
 
 export default function DegreeCard(props) {
@@ -14,14 +15,12 @@ export default function DegreeCard(props) {
         transition={{ duration: 2 }}
         className={styles.cardImg}
       >
-        <img
-          style={{
-            maxWidth: "100%",
-            maxHeight: "100%",
-            transform: "scale(0.9)",
-          }}
-          src={require(`../../../public/images/${degree.logo_path}`)}
+        <Image
+          src={`/images/${degree.logo_path}`}
           alt={degree.alt_name}
+          width={200}
+          height={200}
+          objectFit="contain"
         />
       </motion.div>
       <motion.div
