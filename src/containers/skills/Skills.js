@@ -1,26 +1,37 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 import styles from "./Skills.module.css";
 import SkillSection from "./SkillSection";
 import { chosenTheme } from "../../styles/theme";
 
-export default function Skills(props) {
+export default function Skills() {
   const theme = chosenTheme;
+
+  const containerVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 1,
+        delayChildren: 0.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
   return (
     <div className={styles.main} id="skills">
-      <div className={styles.skillsHeaderDiv}>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 2 }}
-          className={styles.skillsHeader}
-          style={{ color: theme.text }}
-        >
+      <motion.div
+        className={styles.skillsHeaderDiv}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <h1 className={styles.skillsHeader} style={{ color: theme.text }}>
           What I Do?
-        </motion.h1>
-      </div>
+        </h1>
+      </motion.div>
       <SkillSection theme={theme} />
     </div>
   );

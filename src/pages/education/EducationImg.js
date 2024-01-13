@@ -1,7 +1,8 @@
 import React from "react";
+import { chosenTheme } from "../../styles/theme";
 
 export default function EducationImg(props) {
-  const theme = props.theme;
+  const theme = chosenTheme;
   return (
     <svg
       id="eb113788-f1f1-4c1f-be62-f1d0ea2e1eb6"

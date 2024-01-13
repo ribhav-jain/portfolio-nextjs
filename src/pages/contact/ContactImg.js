@@ -1,7 +1,8 @@
 import React from "react";
+import { chosenTheme } from "../../styles/theme";
 
 export default function ContactImg(props) {
-  const theme = props.theme;
+  const theme = chosenTheme;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

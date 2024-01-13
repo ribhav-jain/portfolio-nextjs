@@ -1,7 +1,8 @@
 import React from "react";
+import { chosenTheme } from "../../styles/theme";
 
-export default function AddressImg(props) {
-  const theme = props.theme;
+export default function AddressImg() {
+  const theme = chosenTheme;
   return (
     <svg
       id="aaafdec0-95c8-49a3-a8f8-64216c6da511"

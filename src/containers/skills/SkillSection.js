@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 import styles from "./Skills.module.css";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
@@ -12,75 +11,100 @@ import BackendLottie from "../../../public/lottie/backend.json";
 import { skills } from "../../portfolio";
 
 function GetSkillImgLottie(props) {
-  if (props.fileName === "DataScienceLottie")
+  if (props.fileName === "DataScienceLottie") {
     return <DisplayLottie animationData={DataScienceLottie} />;
-  else if (props.fileName === "FrontendLottie")
+  } else if (props.fileName === "FrontendLottie") {
     return <DisplayLottie animationData={FrontendLottie} />;
-  else if (props.fileName === "BackendLottie")
+  } else if (props.fileName === "BackendLottie") {
     return <DisplayLottie animationData={BackendLottie} />;
-  else if (props.fileName === "DataScienceImg")
+  } else if (props.fileName === "DataScienceImg") {
     return <DataScienceImg theme={props.theme} />;
-  else if (props.fileName === "FullStackImg")
+  } else if (props.fileName === "FullStackImg") {
     return <FullStackImg theme={props.theme} />;
-  return "";
+  }
+  return null;
 }
 
 export default function SkillSection(props) {
   const theme = props.theme;
 
+  const leftToRightVariant = {
+    offscreen: { x: -100, opacity: 0 },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.1,
+        duration: 1.5,
+      },
+    },
+  };
+
+  const rightToLeftVariant = {
+    offscreen: { x: 100, opacity: 0 },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.1,
+        duration: 1.5,
+      },
+    },
+  };
+
   return (
-    <div>
-      {skills.data.map((skill, index) => {
-        return (
-          <div key={index} className={styles.skillsMainDiv}>
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 2 }}
-              className={styles.skillsImageDiv}
+    <div className={styles.skillsContainer}>
+      {skills.data.map((skill, index) => (
+        <div key={index} className={styles.skillsMainDiv}>
+          <motion.div
+            className={styles.skillsImageDiv}
+            variants={leftToRightVariant}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <GetSkillImgLottie fileName={skill.fileName} theme={theme} />
+          </motion.div>
+          <div className={styles.skillsTextDiv}>
+            <motion.h1
+              className={styles.skillsHeading}
+              style={{ color: theme.text }}
+              variants={rightToLeftVariant}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.5 }}
             >
-              <GetSkillImgLottie fileName={skill.fileName} theme={theme} />
+              {skill.title}
+            </motion.h1>
+            <motion.div
+              variants={rightToLeftVariant}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <SoftwareSkill logos={skill.softwareSkills} />
             </motion.div>
-            <div className={styles.skillsTextDiv}>
-              <motion.h1
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
-                className={styles.skillsHeading}
-                style={{ color: theme.text }}
-              >
-                {skill.title}
-              </motion.h1>
-              <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1.5 }}
-              >
-                <SoftwareSkill logos={skill.softwareSkills} />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 2 }}
-              >
-                <div>
-                  {skill.skills.map((skillSentence, sentenceIndex) => {
-                    return (
-                      <p
-                        key={sentenceIndex}
-                        className={`${styles.subTitle} ${styles.skillsText}`}
-                        style={{ color: theme.secondaryText }}
-                      >
-                        {skillSentence}
-                      </p>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            </div>
+            <motion.div
+              variants={rightToLeftVariant}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              {skill.skills.map((skillSentence, sentenceIndex) => (
+                <p
+                  key={sentenceIndex}
+                  className={`${styles.subTitle} ${styles.skillsText}`}
+                  style={{ color: theme.secondaryText }}
+                >
+                  {skillSentence}
+                </p>
+              ))}
+            </motion.div>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }

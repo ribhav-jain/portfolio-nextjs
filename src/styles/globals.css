@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Great Vibes";
+  font-family: "Agustina";
   font-style: normal;
   font-weight: normal;
   src:
-    local("Great Vibes"),
-    url("/fonts/GreatVibes/GreatVibes-Regular.ttf") format("truetype");
+    local("Agustina"),
+    url("/fonts/Agustina/Agutina 400.otf") format("opentype");
 }
 
 @font-face {

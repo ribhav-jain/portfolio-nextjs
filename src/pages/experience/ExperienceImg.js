@@ -1,7 +1,8 @@
 import React from "react";
+import { chosenTheme } from "../../styles/theme";
 
 export default function ExperienceImg(props) {
-  const theme = props.theme;
+  const theme = chosenTheme;
   return (
     <svg
       id="bf56719a-dd30-4b09-833f-7c41eeee086b"
