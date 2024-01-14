@@ -1,11 +1,11 @@
-.main {
+.skillsContainer {
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
+  margin: 0 auto;
   margin-top: 4rem;
 }
 
-.skillsHeaderDiv {
+.skillsHeaderContainer {
   text-align: center;
 }
 
@@ -43,6 +43,14 @@
   margin-left: 50px;
   font-family: "Open Sans Regular";
 }
+.subTitle {
+}
+
+.skillsText {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
 
 /* Responsive Styles */
 @media (max-width: 1380px) {
@@ -74,5 +82,10 @@
 
   .skillsImageDiv {
     order: 2;
+  }
+
+  .skillsText {
+    line-height: 1.4;
+    margin-bottom: 15px;
   }
 }

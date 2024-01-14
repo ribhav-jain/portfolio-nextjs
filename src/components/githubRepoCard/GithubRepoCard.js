@@ -1,14 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 import styles from "./GithubRepoCard.module.css";
 import ProjectLanguages from "../../components/projectLanguages/ProjectLanguages";
 
-export default function GithubRepoCard({ repo, theme }) {
-  function openRepoinNewTab(url) {
+const GithubRepoCard = ({ repo, theme }) => {
+  const openRepoInNewTab = (url) => {
     const win = window.open(url, "_blank");
     win.focus();
-  }
+  };
 
   return (
     <div>
@@ -16,44 +16,37 @@ export default function GithubRepoCard({ repo, theme }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2 }}
-        className={styles.repoCardDiv}
-        key={repo.id}
-        onClick={() => openRepoinNewTab(repo.url)}
+        className={styles.repoCard}
+        onClick={() => openRepoInNewTab(repo.url)}
         style={{ backgroundColor: theme.highlight }}
       >
-        <div className={styles.repoNameDiv}>
-          <svg
-            aria-hidden="true"
-            className="octicon repo-svg"
-            height="20"
-            role="img"
-            viewBox="0 0 12 16"
-            width="14"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"
-            ></path>
-          </svg>
-          <p className={styles.repoName} style={{ color: theme.text }}>
+        <div className={styles.cardHeader}>
+          <Image
+            src={`/images/book.png`}
+            alt={repo.name}
+            width={40}
+            height={40}
+            objectFit="contain"
+          />
+          <h3 className={styles.repoName} style={{ color: theme.text }}>
             {repo.name}
-          </p>
+          </h3>
         </div>
         <p className={styles.repoDescription} style={{ color: theme.text }}>
           {repo.description}
         </p>
-        <div className={styles.repoDetails}>
-          <div className={styles.repoLanguages}>
-            <ProjectLanguages logos={repo.languages} />
-          </div>
-          <div
-            className={styles.repoCreationDate}
+        <div className={styles.cardFooter}>
+          <ProjectLanguages logos={repo.languages} />
+          <span
+            className={styles.creationDate}
             style={{ color: theme.secondaryText }}
           >
             Created on {repo.createdAt.split("T")[0]}
-          </div>
+          </span>
         </div>
       </motion.div>
     </div>
   );
-}
+};
+
+export default GithubRepoCard;

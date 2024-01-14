@@ -45,7 +45,7 @@ export default function Contact(props) {
             >
               {ContactData["description"]}
             </p>
-            <SocialMedia theme={theme} />
+            <SocialMedia theme={theme} alignment="center" />
             <div className={styles.resumeBtnDiv}>
               <Button
                 text="See My Resume"

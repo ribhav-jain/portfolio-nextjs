@@ -1,0 +1,103 @@
+$size: 120px;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 50%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(-37.5deg) rotateY(45deg);
+  }
+  50% {
+    transform: rotateX(-37.5deg) rotateY(405deg);
+  }
+  100% {
+    transform: rotateX(-37.5deg) rotateY(405deg);
+  }
+}
+
+.cube,
+.cube * {
+  position: absolute;
+  width: $size + 1;
+  height: $size + 1;
+}
+
+.sides {
+  animation: rotate 3s ease infinite;
+  animation-delay: 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateX(-37.5deg) rotateY(45deg);
+}
+
+.cube .sides * {
+  box-sizing: border-box;
+  background-color: #36454f;
+  border: $size / 10 solid #d3d3d3;
+}
+
+@mixin side($name, $rotate, $i) {
+  .#{$name} {
+    animation: #{$name}-animation 3s ease infinite;
+    animation-delay: $i * 100ms;
+    transform: #{$rotate} translateZ($size);
+    animation-fill-mode: forwards;
+    transform-origin: 50% 50%;
+  }
+
+  @keyframes #{$name}-animation {
+    0%,
+    90%,
+    100% {
+      opacity: 1;
+      transform: #{$rotate} translateZ($size);
+    }
+    20%,
+    70% {
+      opacity: 1;
+      transform: #{$rotate} translateZ($size / 2);
+    }
+  }
+}
+
+.cube .sides {
+  @include side("top", rotateX(90deg), 0);
+  @include side("bottom", rotateX(-90deg), 0);
+  @include side("front", rotateY(0deg), 1);
+  @include side("back", rotateY(-180deg), 1);
+  @include side("left", rotateY(-90deg), 1);
+  @include side("right", rotateY(90deg), 1);
+}
+
+@media (max-width: 768px) {
+  $size: 80px;
+
+  .container {
+    width: 80%;
+  }
+
+  .cube,
+  .cube * {
+    width: $size;
+    height: $size;
+  }
+
+  .cube .sides * {
+    border: $size / 10 solid #ffffff;
+  }
+
+  .cube .sides {
+    @include side("top", rotateX(90deg), 0);
+    @include side("bottom", rotateX(-90deg), 0);
+    @include side("front", rotateY(0deg), 1);
+    @include side("back", rotateY(-180deg), 1);
+    @include side("left", rotateY(-90deg), 1);
+    @include side("right", rotateY(90deg), 1);
+  }
+}

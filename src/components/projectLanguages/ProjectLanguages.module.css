@@ -1,26 +1,23 @@
-.softwareSkillsMainDiv {
-  /* Add styles if needed */
+.languagesContainer {
+  /* Additional container styles if needed */
 }
 
-.devIconsLanguages {
-  padding-left: 0;
+.languageIcons {
+  padding: 0;
   list-style: none;
   font-size: 2rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: right;
+  margin: 0;
+  text-align: center;
 }
 
-.softwareSkillInlineLanguages {
+.languageIcon {
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 0px;
+  margin: 10px;
   font-family: "Open Sans Regular";
 }
 
 @media (max-width: 768px) {
-  .softwareSkillInlineLanguages {
-    margin-right: 10px;
-    margin-bottom: 0px;
+  .languageIcon {
+    margin: 5px;
   }
 }

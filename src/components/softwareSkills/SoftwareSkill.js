@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactTooltip from "react-tooltip";
 import styles from "./SoftwareSkill.module.css";
 
-export default function SoftwareSkill(props) {
+const SoftwareSkill = ({ logos }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -10,35 +10,33 @@ export default function SoftwareSkill(props) {
   }, []);
 
   return (
-    <div>
-      <div className={styles.softwareSkillsMainDiv}>
-        <ul className={styles.devIcons}>
-          {props.logos.map((logo, index) => (
-            <React.Fragment key={index}>
-              <li
-                data-tip
-                data-for={logo.skillName}
-                className={styles.softwareSkillInline}
-                name={logo.skillName}
-              >
-                {isClient && (
-                  <span
-                    className="iconify"
-                    data-icon={logo.icon}
-                    style={logo.style}
-                    data-inline="false"
-                  ></span>
-                )}
-              </li>
-              {isClient && (
-                <ReactTooltip id={logo.skillName} effect="solid">
-                  <strong>{logo.skillName}</strong>
-                </ReactTooltip>
-              )}
-            </React.Fragment>
-          ))}
-        </ul>
-      </div>
+    <div className={styles.softwareSkillsContainer}>
+      <ul className={styles.devIconList}>
+        {logos.map((logo, index) => (
+          <li
+            key={index}
+            className={styles.devIconItem}
+            data-tip
+            data-for={logo.skillName}
+          >
+            {isClient && (
+              <span
+                className="iconify"
+                data-icon={logo.icon}
+                style={logo.style}
+                data-inline="false"
+              />
+            )}
+            {isClient && (
+              <ReactTooltip id={logo.skillName} effect="solid">
+                <strong>{logo.skillName}</strong>
+              </ReactTooltip>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
+
+export default SoftwareSkill;

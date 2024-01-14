@@ -1,13 +1,19 @@
-.experienceAccord {
+.experienceAccordion {
   margin: 50px;
 }
 
-.accordPanel {
+.accordionPanel {
   font-family: "Open Sans Regular";
+  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 @media (max-width: 768px) {
-  .experienceAccord {
+  .experienceAccordion {
     margin: 20px;
+  }
+
+  .accordionPanel {
+    padding: 0.5rem;
   }
 }

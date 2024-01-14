@@ -6,19 +6,6 @@
   margin-bottom: 30px;
 }
 
-.cardTitle {
-  font-family: "Open Sans Medium";
-  font-size: 23px;
-  margin: 0;
-}
-
-.cardSubtitle {
-  font-family: "Open Sans Medium";
-  font-size: 18px;
-  margin-top: 7px;
-  margin-bottom: 5px;
-}
-
 .cardImg {
   width: 200px;
   height: auto;
@@ -29,64 +16,75 @@
   margin-right: 20px;
 }
 
+.cardBody {
+  width: 90%;
+  border: 1px solid #d9dbdf;
+  border-radius: 7px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #d9dbdf;
+}
+
 .bodyHeader {
-  max-width: inherit;
   display: flex;
-  border-radius: 7px 7px 0px 0px;
+  justify-content: space-between;
+  border-radius: 7px 7px 0 0;
   padding: 10px;
 }
 
-.bodyHeaderTitle {
-  align-items: flex-start;
+.bodyHeaderContent,
+.duration {
+  font-family: "Open Sans Regular";
+}
+
+.bodyHeaderContent {
   width: 80%;
 }
 
-.bodyHeaderDuration {
-  width: 20%;
-}
-
 .duration {
-  font-family: "Open Sans Regular";
   font-size: 16px;
   padding-right: 10px;
-  float: right;
 }
 
-.bodyContent {
-  max-width: inherit;
-  padding: 5px;
-  justify-content: center;
-  align-items: center;
+.cardTitle,
+.cardSubtitle,
+.contentList,
+.btn {
+  font-family: "Open Sans Regular";
+  margin: 0;
+  padding: 0;
+}
+
+.cardTitle {
+  font-size: 20px;
+  color: inherit;
+}
+
+.cardSubtitle {
+  font-size: 18px;
+  color: inherit;
+  margin-top: 7px;
+  margin-bottom: 5px;
 }
 
 .contentList {
   padding-left: 10px;
   padding-right: 10px;
-  font-family: "Open Sans Regular";
-}
-
-.cardBody {
-  border-bottom: 1px solid #d9dbdf;
-  border-left: 1px solid #d9dbdf;
-  border-right: 1px solid #d9dbdf;
-  border-radius: 7px;
-  width: 90%;
-  margin: 10px;
-  box-shadow: 5px 5px 5px #d9dbdf;
+  color: inherit;
 }
 
 .visitBtn {
-  margin: 0px 10px 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
   padding: 10px;
   border-radius: 7px;
-  border: 0px;
-  float: right;
+  background-color: inherit;
+  cursor: pointer;
 }
 
 .btn {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Open Sans Regular";
+  color: inherit;
 }
 
 @media (max-width: 768px) {
@@ -98,24 +96,18 @@
     flex-direction: column;
   }
 
-  .bodyHeaderTitle {
-    width: 100%;
-  }
-
+  .bodyHeaderContent,
   .bodyHeaderDuration {
-    padding: 0;
-    margin: 0;
     width: 100%;
-  }
-
-  .duration {
-    padding: 0px;
-    margin: 0px;
-    float: left;
   }
 
   .cardBody {
     width: 100%;
+  }
+
+  .cardImg {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
   .cardTitle {
@@ -124,10 +116,5 @@
 
   .cardSubtitle {
     font-size: 16px;
-  }
-
-  .cardImg {
-    margin-right: 0;
-    margin-bottom: 10px;
   }
 }

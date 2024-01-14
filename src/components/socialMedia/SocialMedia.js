@@ -2,35 +2,47 @@ import React, { useState, useEffect } from "react";
 import styles from "./SocialMedia.module.css";
 import { socialMediaLinks } from "../../portfolio";
 
-export default function SocialMedia(props) {
+const SocialMedia = ({ alignment = "flex-start" }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Once the component mounts, we know it's client-side
-    setIsClient(true);
+    setIsClient(true); // Set to true once the component mounts
   }, []);
 
+  const handleMouseEnter = (event, color) => {
+    event.target.style.color = color;
+  };
+
+  const handleMouseLeave = (event) => {
+    event.target.style.color = "#74808a";
+  };
+
   return (
-    <div className={styles.socialMediaDiv}>
+    <div
+      className={styles.socialMediaContainer}
+      style={{ justifyContent: alignment }}
+    >
       {socialMediaLinks.map((media, index) => (
         <a
           key={index}
           href={media.link}
-          className={styles.iconButton}
+          className={styles.socialIcon}
           target="_blank"
           rel="noopener noreferrer"
-          onMouseEnter={(event) => (event.target.style.color = media.color)}
-          onMouseLeave={(event) => (event.target.style.color = "#74808a")}
+          onMouseEnter={(event) => handleMouseEnter(event, media.color)}
+          onMouseLeave={handleMouseLeave}
         >
           {isClient && (
             <span
               className="iconify"
               data-icon={media.icon}
               data-inline="false"
-            ></span>
+            />
           )}
         </a>
       ))}
     </div>
   );
-}
+};
+
+export default SocialMedia;

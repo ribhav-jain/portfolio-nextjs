@@ -2,30 +2,26 @@ import React from "react";
 import styles from "./ExperienceAccordion.module.css";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 
-export default function ExperienceAccordion(props) {
-  const theme = props.theme;
-
+const ExperienceAccordion = ({ sections, theme }) => {
   return (
-    <div className={styles.experienceAccord}>
-      {props.sections.map((section, index) => {
-        return (
-          <div
-            className={styles.accordPanel}
-            title={section["title"]}
-            key={index}
-          >
-            {section["experiences"].map((experience, expIndex) => {
-              return (
-                <ExperienceCard
-                  key={expIndex}
-                  experience={experience}
-                  theme={theme}
-                />
-              );
-            })}
-          </div>
-        );
-      })}
+    <div className={styles.experienceAccordion}>
+      {sections.map((section, index) => (
+        <div
+          className={styles.accordionPanel}
+          title={section.title}
+          key={index}
+        >
+          {section.experiences.map((experience, expIndex) => (
+            <ExperienceCard
+              key={expIndex}
+              experience={experience}
+              theme={theme}
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
-}
+};
+
+export default ExperienceAccordion;

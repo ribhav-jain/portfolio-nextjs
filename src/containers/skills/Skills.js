@@ -4,9 +4,7 @@ import styles from "./Skills.module.css";
 import SkillSection from "./SkillSection";
 import { chosenTheme } from "../../styles/theme";
 
-export default function Skills() {
-  const theme = chosenTheme;
-
+const Skills = () => {
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
@@ -21,18 +19,20 @@ export default function Skills() {
   };
 
   return (
-    <div className={styles.main} id="skills">
+    <div className={styles.skillsContainer} id="skills">
       <motion.div
-        className={styles.skillsHeaderDiv}
+        className={styles.skillsHeaderContainer}
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <h1 className={styles.skillsHeader} style={{ color: theme.text }}>
+        <h1 className={styles.skillsHeader} style={{ color: chosenTheme.text }}>
           What I Do?
         </h1>
       </motion.div>
-      <SkillSection theme={theme} />
+      <SkillSection theme={chosenTheme} />
     </div>
   );
-}
+};
+
+export default Skills;

@@ -1,42 +1,43 @@
 import React, { useEffect, useState } from "react";
-
 import styles from "./TopButton.module.css";
 import { chosenTheme } from "../../styles/theme";
 
-export default function TopButton() {
-  const theme = chosenTheme;
+const TopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(
-        document.body.scrollTop > 30 || document.documentElement.scrollTop > 30
-      );
+      const threshold = 30;
+      const scrollTop =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      setIsVisible(scrollTop > threshold);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const goUpEvent = () => {
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const buttonStyle = {
-    color: theme.body,
-    backgroundColor: isVisible ? theme.buttonColor : "transparent",
+    color: chosenTheme.body,
+    backgroundColor: isVisible ? chosenTheme.buttonColor : "transparent",
     visibility: isVisible ? "visible" : "hidden",
   };
 
   return (
-    <div
-      onClick={goUpEvent}
+    <button
+      onClick={scrollToTop}
       style={buttonStyle}
       className={styles.topButton}
-      title="Go up"
+      title="Go to top"
+      aria-label="Go to top"
     >
-      <i className="fas fa-arrow-up" aria-hidden="true" />
-    </div>
+      <i className="fas fa-chevron-up" aria-hidden="true" />
+    </button>
   );
-}
+};
+
+export default TopButton;

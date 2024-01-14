@@ -3,7 +3,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import styles from "./Header.module.css";
-import SeoHeader from "../seoHeader/SeoHeader";
 import { greeting } from "../../portfolio";
 import { chosenTheme } from "../../styles/theme";
 
@@ -35,7 +34,6 @@ const Header = (props) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <SeoHeader />
       <div>
         <header className={styles.header}>
           <Link href="/home">

@@ -1,26 +1,21 @@
-.softwareSkillsMainDiv {
+.softwareSkillsContainer {
+  /* Additional styles if needed */
 }
 
-.devIcons {
-  padding-left: 0;
+.devIconList {
+  padding: 0;
   list-style: none;
   font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin: 0;
   text-align: center;
 }
 
-.softwareSkillInline {
+.devIconItem {
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin: 10px;
   font-family: "Open Sans Regular";
 }
 
-.softwareSkillInline > i {
-  color: #868e96;
-}
-
-.softwareSkillInline > i:hover {
+.devIconItem:hover {
   color: #645beb;
 }

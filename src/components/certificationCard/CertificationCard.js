@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./CertificationCard.module.css";
 
-export default function CertificationCard(props) {
-  const certificate = props.certificate;
-  const theme = props.theme;
+export default function CertificationCard({ certificate, theme }) {
+  const { link, color_code, logo_path, alt_name, title, subtitle } =
+    certificate;
 
   return (
     <motion.div
@@ -15,16 +15,16 @@ export default function CertificationCard(props) {
       className={styles.certCard}
     >
       <div className={styles.content}>
-        <a href={certificate.link} target="_blank" rel="noopener noreferrer">
+        <a href={link} target="_blank" rel="noopener noreferrer">
           <div className={styles.contentOverlay}></div>
           <div
             className={styles.certHeader}
-            style={{ backgroundColor: certificate.color_code }}
+            style={{ backgroundColor: color_code }}
           >
             <div className={styles.logoImg}>
               <Image
-                src={`/images/${certificate.logo_path}`}
-                alt={certificate.alt_name}
+                src={`/images/${logo_path}`}
+                alt={alt_name}
                 layout="fill"
                 objectFit="contain"
               />
@@ -41,13 +41,13 @@ export default function CertificationCard(props) {
       </div>
       <div className={styles.certBody}>
         <h2 className={styles.certBodyTitle} style={{ color: theme.text }}>
-          {certificate.title}
+          {title}
         </h2>
         <h3
           className={styles.certBodySubtitle}
           style={{ color: theme.secondaryText }}
         >
-          {certificate.subtitle}
+          {subtitle}
         </h3>
       </div>
     </motion.div>

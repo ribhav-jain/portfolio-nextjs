@@ -1,26 +1,21 @@
-.competitiveSitesMainDiv {
+.competitiveSitesContainer {
+  /* Additional container styles if needed */
 }
 
-.devIcons {
+.siteIcons {
   padding-left: 0;
   list-style: none;
   font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin: 0;
   text-align: center;
 }
 
-.competitiveSitesInline {
+.siteItem {
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin: 0 20px 20px 0;
   font-family: "Open Sans Regular";
 }
 
-.competitiveSitesInline > i {
-  color: #868e96;
-}
-
-.competitiveSitesInline > i:hover {
+.siteItem:hover {
   color: #645beb;
 }

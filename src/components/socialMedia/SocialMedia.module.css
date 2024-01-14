@@ -1,21 +1,26 @@
-.socialMediaDiv {
+.socialMediaContainer {
   font-size: 2em;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.iconButton {
+.socialIcon {
   margin: 10px;
   font-size: 2rem;
   color: #74808a;
   display: flex;
   align-items: center;
+  transition: color 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: inherit;
 }
 
 @media (max-width: 768px) {
-  .socialMediaDiv {
-    justify-content: center;
+  .socialMediaContainer {
+    justify-content: center !important;
   }
 }

@@ -3,10 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./DegreeCard.module.css";
 
-export default function DegreeCard(props) {
-  const degree = props.degree;
-  const theme = props.theme;
-
+export default function DegreeCard({ degree, theme }) {
   return (
     <div className={styles.degreeCard}>
       <motion.div
@@ -33,7 +30,7 @@ export default function DegreeCard(props) {
           className={styles.bodyHeader}
           style={{ backgroundColor: theme.headerColor }}
         >
-          <div className={styles.bodyHeaderTitle}>
+          <div className={styles.bodyHeaderContent}>
             <h2 className={styles.cardTitle} style={{ color: theme.text }}>
               {degree.title}
             </h2>
@@ -41,37 +38,30 @@ export default function DegreeCard(props) {
               {degree.subtitle}
             </h3>
           </div>
-          <div className={styles.bodyHeaderDuration}>
-            <h3 className={styles.duration} style={{ color: theme.text }}>
-              {degree.duration}
-            </h3>
-          </div>
+          <h3 className={styles.duration} style={{ color: theme.text }}>
+            {degree.duration}
+          </h3>
         </div>
         <div className={styles.bodyContent}>
-          {degree.descriptions.map((sentence, index) => {
-            return (
-              <p
-                key={index}
-                className={styles.contentList}
-                style={{ color: theme.text }}
-              >
-                {sentence}
-              </p>
-            );
-          })}
+          {degree.descriptions.map((sentence, index) => (
+            <p
+              key={index}
+              className={styles.contentList}
+              style={{ color: theme.text }}
+            >
+              {sentence}
+            </p>
+          ))}
           <a
             href={degree.website_link}
             target="_blank"
             rel="noopener noreferrer"
+            className={styles.visitBtn}
+            style={{ backgroundColor: theme.headerColor }}
           >
-            <div
-              className={styles.visitBtn}
-              style={{ backgroundColor: theme.headerColor }}
-            >
-              <p className={styles.btn} style={{ color: theme.text }}>
-                Visit Website
-              </p>
-            </div>
+            <p className={styles.btn} style={{ color: theme.text }}>
+              Visit Website
+            </p>
           </a>
         </div>
       </motion.div>

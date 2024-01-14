@@ -1,79 +1,77 @@
-.main {
+.greetingContainer {
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
-
-.greetMain {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
+  margin: 0 auto;
   margin-top: 2rem;
 }
 
-.greetingMain {
+.greetingContent {
   display: flex;
 }
 
-.greetingMain > * {
+.greetingTextContainer {
   flex: 1;
   margin-bottom: 30px;
 }
 
-.greetingText {
+.greetingTitle {
   margin-top: 80px;
+  margin-bottom: 20px;
   font-size: 70px;
   line-height: 1.1;
   font-family: "Open Sans Bold";
 }
 
-.greetingTextP {
+.greetingSubtitle {
   font-size: 40px;
   line-height: 40px;
   margin-right: 40px;
   font-family: "Open Sans Medium";
 }
 
-.greetingImageDiv > * {
+.greetingIllustrationContainer > * {
   max-width: 100%;
   height: auto;
 }
 
+.resumeButtonContainer {
+  display: flex;
+}
+
+.resumeButton {
+  /* Styles for resume button */
+}
+
 @media (max-width: 1380px) {
-  .greetingText {
+  .greetingTitle {
     font-size: 50px;
   }
 
-  .greetingTextP {
+  .greetingSubtitle {
     font-size: 20px;
   }
 }
+
 @media (max-width: 768px) {
-  .buttonGreetingDiv {
-    justify-content: space-around;
+  .greetingContent {
+    display: block;
   }
 
-  .greetingText {
+  .greetingTitle {
     font-size: 30px;
     margin-top: 0px;
     text-align: center;
   }
 
-  .greetingTextP {
+  .greetingSubtitle {
     font-size: 16px;
     margin-right: 0px;
     line-height: normal;
     text-align: center;
   }
 
-  .greetingMain {
-    display: block;
-  }
-
-  .portfolioRepoBtnDiv {
+  .resumeButtonContainer {
     width: 100%;
-    display: flex;
     justify-content: center;
   }
 }

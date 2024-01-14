@@ -1,10 +1,19 @@
 .topButton {
   position: fixed;
-  bottom: 1.2rem;
-  right: 1.5rem;
+  bottom: 1rem;
+  right: 1rem;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px 13px;
   outline: none;
-  border-radius: 2rem;
-  font-size: 1rem;
+  border-radius: 50%;
+  font-size: 20px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition:
+    background-color 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.topButton:hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }

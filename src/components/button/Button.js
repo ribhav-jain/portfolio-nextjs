@@ -2,11 +2,16 @@ import React from "react";
 import styles from "./Button.module.css";
 
 export default function Button({ text, className, href, newTab, theme }) {
-  const onMouseEnter = (event) => {
+  const style = {
+    color: theme.body,
+    backgroundColor: theme.buttonColor,
+  };
+
+  const handleMouseEnter = (event) => {
     event.target.style.backgroundColor = theme.hoverButtonColor;
   };
 
-  const onMouseOut = (event) => {
+  const handleMouseOut = (event) => {
     event.target.style.backgroundColor = theme.buttonColor;
   };
 
@@ -17,12 +22,9 @@ export default function Button({ text, className, href, newTab, theme }) {
         href={href}
         target={newTab ? "_blank" : undefined}
         rel={newTab ? "noopener noreferrer" : undefined}
-        style={{
-          color: theme.body,
-          backgroundColor: theme.buttonColor,
-        }}
-        onMouseEnter={onMouseEnter}
-        onMouseOut={onMouseOut}
+        style={style}
+        onMouseEnter={handleMouseEnter}
+        onMouseOut={handleMouseOut}
       >
         {text}
       </a>
