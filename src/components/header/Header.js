@@ -25,6 +25,12 @@ const Header = () => {
     event.target.style.backgroundColor = "transparent";
   };
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const menuItems = [
     { name: "Home", path: "/home" },
     { name: "Education", path: "/education" },
@@ -47,8 +53,13 @@ const Header = () => {
             <span>/&gt;</span>
           </span>
         </Link>
-        <nav>
-          <ul className={styles.menu}>
+        <div className={styles.menuIcon} onClick={toggleMenu}>
+          <div
+            className={`${styles.navicon} ${isMenuOpen ? styles.open : ""}`}
+          ></div>
+        </div>
+        <nav className={`${styles.menu} ${isMenuOpen ? styles.show : ""}`}>
+          <ul>
             {menuItems.map(({ name, path }) => (
               <li key={name}>
                 <Link href={path}>
