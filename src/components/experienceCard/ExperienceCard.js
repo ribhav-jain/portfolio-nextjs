@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./ExperienceCard.module.css";
@@ -37,9 +38,13 @@ export default function ExperienceCard({ experience, theme }) {
               {title}
             </h3>
             <p className={styles.company} style={{ color: theme.text }}>
-              <a href={company_url} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={company_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {company}
-              </a>
+              </Link>
             </p>
           </div>
           <div className={styles.headerDetails}>

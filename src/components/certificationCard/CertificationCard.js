@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./CertificationCard.module.css";
@@ -15,7 +16,7 @@ export default function CertificationCard({ certificate, theme }) {
       className={styles.certCard}
     >
       <div className={styles.content}>
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <Link href={link} target="_blank" rel="noopener noreferrer">
           <div className={styles.contentOverlay}></div>
           <div
             className={styles.certHeader}
@@ -37,7 +38,7 @@ export default function CertificationCard({ certificate, theme }) {
               style={{ color: "#fff", fontSize: "2rem" }}
             ></span>
           </div>
-        </a>
+        </Link>
       </div>
       <div className={styles.certBody}>
         <h2 className={styles.certBodyTitle} style={{ color: theme.text }}>

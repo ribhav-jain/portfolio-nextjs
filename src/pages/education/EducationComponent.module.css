@@ -1,70 +1,59 @@
-.educationMain {
+.educationContainer {
   width: 100%;
 }
 
-.basicEducation {
-  margin-left: 5%;
-  margin-right: 5%;
+.content {
+  margin: 0 5%;
 }
 
-.headingDiv {
+.headingSection {
   display: flex;
-}
-
-.headingDiv > * {
-  flex: 1;
-}
-
-.headingImgDiv {
   align-items: center;
-  justify-content: center;
 }
 
-.headingTextDiv {
+.imageWrapper,
+.textWrapper {
+  flex: 1;
   text-align: center;
 }
 
-.headingImgDiv > * {
+.imageWrapper > * {
   max-width: 100%;
   height: auto;
 }
 
-.headingText {
+.textWrapper h1 {
   font-size: 56px;
   font-weight: 400;
   font-family: "Open Sans Medium";
   line-height: 1.1;
-  text-align: center;
-  margin-top: 100px;
 }
 
-.headingSubText {
+.textWrapper h3 {
   font-size: 30px;
   font-family: "Open Sans Regular";
-  text-align: center;
 }
 
 @media (max-width: 1380px) {
-  .headingText {
+  .textWrapper h1 {
     font-size: 50px;
-    margin-top: 80px;
   }
-  .headingSubText {
+  .textWrapper h3 {
     font-size: 25px;
   }
 }
 
 @media (max-width: 768px) {
-  .headingText {
+  .headingSection {
+    flex-direction: column;
+  }
+
+  .textWrapper h1 {
     font-size: 30px;
     margin-top: 20px;
   }
 
-  .headingSubText {
+  .textWrapper h3 {
     font-size: 20px;
-  }
-
-  .headingDiv {
-    flex-direction: column;
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import ReactTooltip from "react-tooltip";
 import styles from "./CompetitiveSites.module.css";
 
@@ -12,14 +13,18 @@ const CompetitiveSites = ({ logos }) => (
           data-tip
           data-for={logo.siteName}
         >
-          <a href={logo.profileLink} target="_blank" rel="noopener noreferrer">
+          <Link
+            href={logo.profileLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span
               className="iconify"
               data-icon={logo.icon}
               style={logo.style}
               data-inline="false"
             ></span>
-          </a>
+          </Link>
           <ReactTooltip id={logo.siteName} effect="solid">
             <strong>{logo.siteName}</strong>
           </ReactTooltip>

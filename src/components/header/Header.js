@@ -6,27 +6,32 @@ import styles from "./Header.module.css";
 import { greeting } from "../../portfolio";
 import { chosenTheme } from "../../styles/theme";
 
-const Header = (props) => {
+const Header = () => {
   const [currentPath, setCurrentPath] = useState("");
-  const theme = chosenTheme;
+  const { text, body, highlight } = chosenTheme;
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
   }, []);
 
-  const isActive = (href) => {
-    return currentPath === href ? { fontWeight: "bold" } : {};
-  };
+  const isActive = (href) =>
+    currentPath === href ? { fontWeight: "bold" } : null;
 
-  const onMouseEnter = (event, color) => {
-    const el = event.target;
-    el.style.backgroundColor = color;
+  const onMouseEnter = (event) => {
+    event.target.style.backgroundColor = highlight;
   };
 
   const onMouseOut = (event) => {
-    const el = event.target;
-    el.style.backgroundColor = "transparent";
+    event.target.style.backgroundColor = "transparent";
   };
+
+  const menuItems = [
+    { name: "Home", path: "/home" },
+    { name: "Education", path: "/education" },
+    { name: "Experience", path: "/experience" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact Me", path: "/contact" },
+  ];
 
   return (
     <motion.div
@@ -34,77 +39,32 @@ const Header = (props) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div>
-        <header className={styles.header}>
-          <Link href="/home">
-            <span className={styles.logo} style={{ color: theme.text }}>
-              <span>&lt;</span>
-              <span className={styles.logoName}>{greeting.logo_name}</span>
-              <span>/&gt;</span>
-            </span>
-          </Link>
-          <label className={styles.menuIcon} htmlFor="menu-btn">
-            <span className={styles.navicon}></span>
-          </label>
-          <ul className={styles.menu} style={{ backgroundColor: theme.body }}>
-            <li>
-              <Link href="/home">
-                <span
-                  style={{ ...isActive("/home"), color: theme.text }}
-                  onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-                  onMouseOut={onMouseOut}
-                >
-                  Home
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/education">
-                <span
-                  style={{ ...isActive("/education"), color: theme.text }}
-                  onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-                  onMouseOut={onMouseOut}
-                >
-                  Education
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/experience">
-                <span
-                  style={{ ...isActive("/experience"), color: theme.text }}
-                  onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-                  onMouseOut={onMouseOut}
-                >
-                  Experience
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects">
-                <span
-                  style={{ ...isActive("/projects"), color: theme.text }}
-                  onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-                  onMouseOut={onMouseOut}
-                >
-                  Projects
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                <span
-                  style={{ ...isActive("/contact"), color: theme.text }}
-                  onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
-                  onMouseOut={onMouseOut}
-                >
-                  Contact Me
-                </span>
-              </Link>
-            </li>
+      <header className={styles.header} style={{ backgroundColor: body }}>
+        <Link href="/home">
+          <span className={styles.logo} style={{ color: text }}>
+            <span>&lt;</span>
+            <span className={styles.logoName}>{greeting.logo_name}</span>
+            <span>/&gt;</span>
+          </span>
+        </Link>
+        <nav>
+          <ul className={styles.menu}>
+            {menuItems.map(({ name, path }) => (
+              <li key={name}>
+                <Link href={path}>
+                  <span
+                    style={{ ...isActive(path), color: text }}
+                    onMouseEnter={onMouseEnter}
+                    onMouseOut={onMouseOut}
+                  >
+                    {name}
+                  </span>
+                </Link>
+              </li>
+            ))}
           </ul>
-        </header>
-      </div>
+        </nav>
+      </header>
     </motion.div>
   );
 };

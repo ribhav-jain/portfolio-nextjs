@@ -55,11 +55,11 @@ export default function SkillSection(props) {
   };
 
   return (
-    <div className={styles.skillsContainer}>
+    <div className={styles.skillSectionContainer}>
       {skills.data.map((skill, index) => (
-        <div key={index} className={styles.skillsMainDiv}>
+        <div key={index} className={styles.skillItem}>
           <motion.div
-            className={styles.skillsImageDiv}
+            className={styles.skillImageWrapper}
             variants={leftToRightVariant}
             initial="offscreen"
             whileInView="onscreen"
@@ -67,9 +67,9 @@ export default function SkillSection(props) {
           >
             <GetSkillImgLottie fileName={skill.fileName} theme={theme} />
           </motion.div>
-          <div className={styles.skillsTextDiv}>
+          <div className={styles.skillDescriptionWrapper}>
             <motion.h1
-              className={styles.skillsHeading}
+              className={styles.skillHeading}
               style={{ color: theme.text }}
               variants={rightToLeftVariant}
               initial="offscreen"
@@ -95,7 +95,7 @@ export default function SkillSection(props) {
               {skill.skills.map((skillSentence, sentenceIndex) => (
                 <p
                   key={sentenceIndex}
-                  className={`${styles.subTitle} ${styles.skillsText}`}
+                  className={`${styles.skillSubTitle} ${styles.skillText}`}
                   style={{ color: theme.secondaryText }}
                 >
                   {skillSentence}

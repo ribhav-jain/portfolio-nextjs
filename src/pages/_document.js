@@ -108,7 +108,7 @@ class MyDocument extends Document {
           {/* Stylesheets and Scripts */}
           <link
             rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           />
           <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
         </Head>

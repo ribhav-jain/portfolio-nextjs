@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import styles from "./DegreeCard.module.css";
@@ -52,7 +53,7 @@ export default function DegreeCard({ degree, theme }) {
               {sentence}
             </p>
           ))}
-          <a
+          <Link
             href={degree.website_link}
             target="_blank"
             rel="noopener noreferrer"
@@ -62,7 +63,7 @@ export default function DegreeCard({ degree, theme }) {
             <p className={styles.btn} style={{ color: theme.text }}>
               Visit Website
             </p>
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>

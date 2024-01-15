@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 import styles from "./Experience.module.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -14,41 +13,28 @@ export default function Experience() {
   const theme = chosenTheme;
 
   return (
-    <div className={styles.experienceMain}>
+    <div className={styles.experienceContainer}>
       <Header theme={theme} />
-      <div className={styles.basicExperience}>
+      <div className={styles.content}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 2 }}
-          className={styles.experienceHeadingDiv}
+          className={styles.headingSection}
         >
-          <div className={styles.experienceHeadingImgDiv}>
+          <div className={styles.imageWrapper}>
             <ExperienceImg theme={theme} />
           </div>
-          <div className={styles.experienceHeadingTextDiv}>
-            <h1
-              className={styles.experienceHeadingText}
-              style={{ color: theme.text }}
-            >
-              {experience.title}
-            </h1>
-            <h3
-              className={styles.experienceHeadingSubText}
-              style={{ color: theme.text }}
-            >
-              {experience["subtitle"]}
-            </h3>
-            <p
-              className={styles.experienceHeaderDetailText}
-              style={{ color: theme.secondaryText }}
-            >
-              {experience["description"]}
+          <div className={styles.textWrapper}>
+            <h1 style={{ color: theme.text }}>{experience.title}</h1>
+            <h3 style={{ color: theme.text }}>{experience.subtitle}</h3>
+            <p style={{ color: theme.secondaryText }}>
+              {experience.description}
             </p>
           </div>
         </motion.div>
+        <ExperienceAccordion sections={experience.sections} theme={theme} />
       </div>
-      <ExperienceAccordion sections={experience["sections"]} theme={theme} />
       <Footer theme={theme} />
       <TopButton theme={theme} />
     </div>

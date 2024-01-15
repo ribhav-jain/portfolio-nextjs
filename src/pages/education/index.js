@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 import styles from "./EducationComponent.module.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -16,24 +15,22 @@ export default function Education() {
   const theme = chosenTheme;
 
   return (
-    <div className={styles.educationMain}>
+    <div className={styles.educationContainer}>
       <Header theme={theme} />
-      <div className={styles.basicEducation}>
+      <div className={styles.content}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 2 }}
-          className={styles.headingDiv}
+          className={styles.headingSection}
         >
-          <div className={styles.headingImgDiv}>
+          <div className={styles.imageWrapper}>
             <EducationImg theme={theme} />
           </div>
-          <div className={styles.headingTextDiv}>
-            <h1 className={styles.headingText} style={{ color: theme.text }}>
-              Education
-            </h1>
-            <h3 className={styles.headingSubText} style={{ color: theme.text }}>
-              Basic Qualification and Certifcations
+          <div className={styles.textWrapper}>
+            <h1 style={{ color: theme.text }}>Education</h1>
+            <h3 style={{ color: theme.text }}>
+              Basic Qualification and Certifications
             </h3>
             <CompetitiveSites logos={competitiveSites.competitiveSites} />
           </div>

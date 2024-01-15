@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import styles from "./SocialMedia.module.css";
 import { socialMediaLinks } from "../../portfolio";
 
@@ -23,7 +24,7 @@ const SocialMedia = ({ alignment = "flex-start" }) => {
       style={{ justifyContent: alignment }}
     >
       {socialMediaLinks.map((media, index) => (
-        <a
+        <Link
           key={index}
           href={media.link}
           className={styles.socialIcon}
@@ -39,7 +40,7 @@ const SocialMedia = ({ alignment = "flex-start" }) => {
               data-inline="false"
             />
           )}
-        </a>
+        </Link>
       ))}
     </div>
   );

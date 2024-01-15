@@ -1,87 +1,69 @@
-.experienceMain {
+.experienceContainer {
   width: 100%;
 }
 
-.basicExperience {
-  margin-left: 5%;
-  margin-right: 5%;
+.content {
 }
 
-.experienceHeadingDiv {
+.headingSection {
   display: flex;
-}
-
-.experienceHeadingDiv > * {
-  flex: 1;
-}
-
-.experienceHeadingImgDiv {
   align-items: center;
-  justify-content: center;
 }
 
-.experienceHeadingTextDiv {
+.imageWrapper,
+.textWrapper {
+  flex: 1;
   text-align: center;
 }
 
-.experienceHeadingImgDiv > * {
+.imageWrapper > * {
   max-width: 100%;
   height: auto;
 }
 
-.experienceHeadingText {
+.textWrapper h1 {
   font-size: 56px;
   font-weight: 400;
   font-family: "Open Sans Medium";
   line-height: 1.1;
-  text-align: center;
-  margin-top: 80px;
 }
 
-.experienceHeadingSubText {
+.textWrapper h3 {
   font-size: 30px;
   font-family: "Open Sans Regular";
-  text-align: center;
-  margin-bottom: 10px;
 }
 
-.experienceHeaderDetailText {
+.textWrapper p {
   font-size: 20px;
   line-height: 30px;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
   font-family: "Open Sans Medium";
 }
 
 @media (max-width: 1380px) {
-  .experienceHeadingText {
+  .textWrapper h1 {
     font-size: 50px;
-    margin-top: 80px;
   }
-  .experienceHeadingSubText {
+  .textWrapper h3 {
     font-size: 25px;
   }
 }
 
 @media (max-width: 768px) {
-  .experienceHeadingText {
-    font-size: 30px;
-    margin-top: 20px;
-  }
-
-  .experienceHeadingSubText {
-    font-size: 20px;
-  }
-
-  .experienceHeadingDiv {
+  .headingSection {
     flex-direction: column;
   }
 
-  .experienceHeaderDetailText {
+  .textWrapper h1 {
+    font-size: 30px;
+  }
+
+  .textWrapper h3 {
+    font-size: 20px;
+  }
+
+  .textWrapper p {
     font-size: 16px;
-    margin-right: 0px;
-    line-height: normal;
+    margin: 0;
     text-align: center;
   }
 }
