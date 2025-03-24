@@ -1,5 +1,9 @@
 .errorMain {
   width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .errorClass {
@@ -7,23 +11,36 @@
   margin: auto 5%;
   text-align: center;
   display: block;
+  padding: 2rem 0;
 }
 
 .error404 {
-  font-size: 7em;
-  overflow: hidden;
-  padding-top: 10px 0;
-  margin: 10px 0;
+  font-size: clamp(4rem, 15vw, 7rem);
+  margin: 0.5rem 0;
+  animation: pulse 2s infinite;
 }
 
 .errorClass p {
-  font-size: 1.4em;
-  margin-top: 0;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  margin: 1.5rem 0;
+  opacity: 0.9;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media screen and (min-width: 1364px) {
-  .error404 {
-    height: 175px;
-    padding-top: 60px;
+  .errorClass {
+    max-width: 800px;
+    margin: auto;
   }
 }

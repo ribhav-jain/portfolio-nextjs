@@ -15,14 +15,18 @@ const Header = () => {
   }, []);
 
   const isActive = (href) =>
-    currentPath === href ? { fontWeight: "bold" } : null;
+    currentPath === href
+      ? {
+          className: styles.active,
+        }
+      : null;
 
   const onMouseEnter = (event) => {
-    event.target.style.backgroundColor = highlight;
+    // event.target.style.backgroundColor = highlight;
   };
 
   const onMouseOut = (event) => {
-    event.target.style.backgroundColor = "transparent";
+    // event.target.style.backgroundColor = "transparent";
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,7 +68,7 @@ const Header = () => {
               <li key={name}>
                 <Link href={path}>
                   <span
-                    style={{ ...isActive(path), color: text }}
+                    style={{ ...isActive(path) }}
                     onMouseEnter={onMouseEnter}
                     onMouseOut={onMouseOut}
                   >

@@ -25,9 +25,9 @@ const CompetitiveSites = ({ logos }) => (
               data-inline="false"
             ></span>
           </Link>
-          <ReactTooltip id={logo.siteName} effect="solid">
+          {/* <ReactTooltip id={logo.siteName} effect="solid">
             <strong>{logo.siteName}</strong>
-          </ReactTooltip>
+          </ReactTooltip> */}
         </li>
       ))}
     </ul>

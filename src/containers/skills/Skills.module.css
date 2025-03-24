@@ -1,12 +1,14 @@
 .skillsContainer {
   width: 90%;
-  padding: 20px 10px;
+  max-width: 1200px;
+  padding: 40px 20px;
   margin: 0 auto;
   margin-top: 4rem;
 }
 
 .skillsHeaderContainer {
   text-align: center;
+  margin-bottom: 2.5rem;
 }
 
 .skillSectionContainer {
@@ -21,45 +23,58 @@
 }
 
 .skillTitle {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.3;
   font-family: "Open Sans Regular";
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .skillItem {
   display: flex;
   overflow: hidden;
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
 .skillItem > * {
   flex: 1;
-  margin-bottom: 30px;
 }
 
 .skillImageWrapper > * {
   max-width: 100%;
   height: auto;
-  margin-top: 100px;
 }
 
 .skillHeading {
-  font-size: 56px;
-  font-weight: 400;
+  background: linear-gradient(120deg, #1a237e 0%, #4a148c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 42px;
+  font-weight: 600;
   font-family: "Open Sans Regular";
-  line-height: normal;
-  margin-top: 30px;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .skillDescriptionWrapper {
-  margin-left: 50px;
+  margin-left: 30px;
   font-family: "Open Sans Regular";
 }
 
 .skillSubTitle {
   line-height: 1.6;
-  margin-bottom: 20px;
-  font-size: 1rem;
+  margin-bottom: 16px;
+  font-size: 17px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.skillSubTitle::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: inherit;
 }
 
 /* Responsive Styles */
@@ -67,13 +82,19 @@
   .skillHeading,
   .skillsHeader,
   .skillTitle {
-    font-size: 40px;
+    font-size: 36px;
+  }
+
+  .skillSubTitle {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 768px) {
   .skillItem {
     flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
   }
 
   .skillDescriptionWrapper,
@@ -84,7 +105,7 @@
   .skillHeading,
   .skillsHeader,
   .skillTitle {
-    font-size: 30px;
+    font-size: 28px;
     text-align: center;
   }
 
@@ -98,7 +119,20 @@
   }
 
   .skillSubTitle {
-    line-height: 1.4;
-    margin-bottom: 15px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    text-align: left;
   }
+}
+
+.skillsHeader {
+  background: linear-gradient(120deg, #1e3b70 0%, #29539b 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  font-family: "Open Sans Regular";
+  margin-bottom: 2rem;
+  font-weight: 600; /* Added for better visibility with dark colors */
 }

@@ -4,7 +4,7 @@
 const seo = {
   title: "Ribhav's Portfolio",
   description:
-    "Versatile data scientist and software developer combining analytical expertise with strong programming skills to deliver data-driven applications. Committed to optimizing processes, solving intricate problems, and delivering innovative solutions for real-world impact.",
+    "Versatile Software Developer & Data Scientist with 5+ years of experience in building AI-driven applications, optimizing workflows, and developing full-stack solutions. Specializing in scalable architectures and data-driven innovations, I focus on enhancing business efficiency and driving impactful solutions.",
   og: {
     title: "Ribhav Jain Portfolio",
     type: "website",
@@ -17,7 +17,7 @@ const greeting = {
   title: "Ribhav Jain",
   logo_name: "Ribhav Jain",
   subTitle:
-    "Versatile data scientist and software developer combining analytical expertise with strong programming skills to deliver data-driven applications. Committed to optimizing processes, solving intricate problems, and delivering innovative solutions for real-world impact.",
+    "Versatile Software Developer & Data Scientist with 5+ years of experience in building AI-driven applications, optimizing workflows, and developing full-stack solutions. Specializing in scalable architectures and data-driven innovations, I focus on enhancing business efficiency and driving impactful solutions.",
   resumeLink:
     "https://docs.google.com/document/d/13QFW9lmCy23KNn9vGpkVA7TU4W4UQxf4jjWPVhtyIVE/",
   portfolio_repository: "https://github.com/ribhav-jain/Portfolio",
@@ -40,7 +40,7 @@ const socialMediaLinks = [
   },
   {
     name: "Gmail",
-    link: "mailto:ribhavjain11@gmail.com",
+    link: "mailto:ribhavjain4@gmail.com",
     icon: "fa-google",
     color: "#D14836",
   },
@@ -58,9 +58,9 @@ const skills = {
       title: "Data Science & AI",
       fileName: "DataScienceLottie",
       skills: [
-        "⚡ Extensive data science and AI experience, adept at extracting valuable insights from time series data to drive data-driven decision-making.",
-        "⚡ Proficient in Natural Language Processing (NLP) techniques, utilizing them to create advanced chatbot applications that elevate user interactions and deliver exceptional customer experiences.",
-        "⚡ Demonstrated expertise in managing intricate time series datasets, applying advanced statistical methods and machine learning algorithms to reveal patterns and trends for predictive modeling and optimization.",
+        "Extensive experience in data science and AI, specializing in extracting actionable insights from time series data to enable data-driven decision-making.",
+        "Proficient in Natural Language Processing (NLP), leveraging advanced techniques to develop intelligent chatbot applications that enhance user interactions and customer experiences.",
+        "Expertise in handling complex time series datasets, applying advanced statistical methods and machine learning algorithms to uncover patterns, drive predictive modeling, and optimize business processes.",
       ],
       softwareSkills: [
         {
@@ -119,9 +119,9 @@ const skills = {
       title: "Front-end Development",
       fileName: "FrontendLottie",
       skills: [
-        "⚡ Proficient in Ext JS and React, creating dynamic web apps with captivating UI/UX and seamless interactions.",
-        "⚡ Seasoned in developing visually striking dashboards, user-friendly CRUD interfaces, and progressive forms, employing a user-centric approach to streamline data management and optimize user engagement.",
-        "⚡ Skilled in building web and mobile-friendly applications, ensuring optimal user experiences across various devices and screen sizes, through responsive and adaptive design techniques.",
+        "Proficient in Ext JS and React, building dynamic, high-performance web applications with engaging UI/UX and seamless interactions.",
+        "Experienced in designing visually rich dashboards, intuitive CRUD interfaces, and interactive forms, ensuring a user-centric approach that enhances data management and user engagement.",
+        "Skilled in developing responsive and mobile-friendly applications, leveraging adaptive design techniques to deliver a consistent and optimized user experience across various devices and screen sizes.",
       ],
       softwareSkills: [
         {
@@ -179,9 +179,9 @@ const skills = {
       title: "Back-end Development",
       fileName: "BackendLottie",
       skills: [
-        "⚡ Demonstrated expertise in optimizing backend performance and ensuring data security while harnessing the power of Play and Django to create seamless and efficient AI solutions for real-world challenges.",
-        "⚡ Proficient in implementing Identity and Access Management (IAM) solutions, integrating authentication, authorization, and user management features to ensure secure and seamless user interactions.",
-        "⚡ Successfully designed and implemented data pipelines using Pentaho and Spring Batch, orchestrating complex data workflows and ETL processes to ensure efficient data integration and transformation.",
+        "Expert in optimizing backend performance and ensuring data security, leveraging Play Framework and Django to develop scalable and efficient AI-driven solutions for real-world challenges.",
+        "Proficient in implementing Identity and Access Management (IAM) solutions, seamlessly integrating authentication, authorization, and user management to enhance security and user experience.",
+        "Experienced in designing and managing data pipelines using Pentaho and Spring Batch, orchestrating complex ETL workflows for efficient data integration, transformation, and processing.",
       ],
       softwareSkills: [
         {
@@ -277,8 +277,8 @@ const degrees = {
       alt_name: "Panjab University Chandigarh",
       duration: "2016 - 2020",
       descriptions: [
-        "⚡ Equipped with a strong foundation in software engineering subjects, including Data Structures, Algorithms, DBMS, Operating Systems, Computer Architecture, and Artificial Intelligence, enabling me to tackle diverse technical challenges effectively.",
-        "⚡ Additionally, I have pursued comprehensive courses in cutting-edge fields such as Deep Learning, Data Science, and Full Stack Development, augmenting my skill set to harness the latest technologies and frameworks for building innovative and data-driven solutions.",
+        "Developed a strong foundation in core computer science subjects, including Data Structures, Algorithms, DBMS, Operating Systems, Computer Architecture, and Artificial Intelligence, enabling effective problem-solving and software development.",
+        "Expanded expertise through specialized courses in Deep Learning, Data Science, and Full Stack Development, equipping me with the latest technologies and frameworks to build innovative, AI-powered, and data-driven solutions.",
       ],
       website_link: "https://puchd.ac.in/",
     },
@@ -347,20 +347,65 @@ const experience = {
   sections: [
     {
       title: "Work",
-      experiences: [],
+      experiences: [
+        {
+          title: "Software Engineer III",
+          company: "Alert Enterprise",
+          company_url: "https://www.alertenterprise.com/",
+          logo_path: "alert_enterprise_logo.svg",
+          duration: "2024 - Present",
+          location: "India",
+          description: [
+            "Architected and implemented an AI-powered agentic chatbot, enabling automated decision-making, policy-based responses, and advanced analytics-driven actions.",
+            "Designed and implemented a multi-tenant SSO solution with SAML, OpenID, and OAuth, ensuring seamless authentication and integration through an intuitive UI-driven configuration.",
+            "Developed an Identity Intelligence module to detect insider threats, reducing security breaches by 30% using behavioral analysis.",
+            "Enhanced security by addressing vulnerabilities from static and dynamic scans, ensuring compliance with industry standards.",
+            "Built a configurable, role-based analytics platform featuring a drag-and-drop designer for dashboards, charts, and reports with advanced filtering, scheduling, multi-format exports, custom layouts, and map support.",
+          ],
+        },
+        {
+          title: "Software Engineer II",
+          company: "Alert Enterprise",
+          company_url: "https://www.alertenterprise.com/",
+          logo_path: "alert_enterprise_logo.svg",
+          duration: "2023 - 2024",
+          location: "India",
+          description: [
+            "Designed an Entity Builder framework for effortless configuration of access requests, workflows, permissions, and layouts, reducing onboarding time by 40% and enhancing customization efficiency.",
+            "Developed a Layout Designer with an intuitive drag-and-drop interface for seamless UI customization across the product suite.",
+            "Developed the Device Intelligence module for configuration anomaly detection, predictive maintenance, and proactive monitoring of security devices, improving system reliability and reducing false alarms.",
+          ],
+        },
+        {
+          title: "Software Engineer I",
+          company: "Alert Enterprise",
+          company_url: "https://www.alertenterprise.com/",
+          logo_path: "alert_enterprise_logo.svg",
+          duration: "2020 - 2023",
+          location: "India",
+          description: [
+            "Enhanced accessibility and multilingual support, achieving WCAG 2.0 AA compliance and expanding translation capabilities for Latin and non-Latin languages.",
+            "Integrated AI-powered smart search for instant results and seamless navigation across the platform.",
+            "Enhanced intelligent automation with GenAI-driven MVEL and JavaScript rule engine, enabling dynamic workflows.",
+            "Built a scalable event reconciliation system using Spring Batch for efficient large-scale data processing.",
+            "Developed a self-service IAM module for automated onboarding, access management, and badge provisioning with PACS integration.",
+            "Implemented badge-based authentication with IdP integration, enabling secure tap-to-login and SAML-based SSO across systems.",
+          ],
+        },
+      ],
     },
     {
       title: "Internships",
       experiences: [
         {
-          title: "Data Scientist",
+          title: "Data Scientist Intern",
           company: "TCIL-IT",
           company_url: "https://www.linkedin.com/company/tcil-it-chandigarh",
           logo_path: "tcil_it.png",
           duration: "May 2019 - Sept 2019",
           location: "Chandigarh, India",
           description:
-            "Developed a secure and user-friendly login system utilizing Flask and React, integrating face recognition technology for seamless authentication. The project enhances user experience and ensures heightened security by employing cutting-edge facial recognition algorithms to verify user identities.",
+            "Developed a secure and user-friendly login system using Flask and React, integrating facial recognition technology for seamless authentication, enhancing security through advanced recognition algorithms.",
         },
         {
           title: "Software Developer Intern",
@@ -370,7 +415,7 @@ const experience = {
           duration: "May 2018 - Aug 2018",
           location: "Chandigarh, India",
           description:
-            "I have worked on designing reporting module for Identity access management (IAM) that generate reports after most actions taken on the platform like login time, systems accessed, and type of authentication to ensure compliance and assess security risks.",
+            "Designed a reporting module for Identity Access Management (IAM), generating detailed reports on login activities, system access, and authentication methods to ensure compliance and assess security risks.",
         },
       ],
     },
@@ -390,11 +435,11 @@ const projects = {
         createdAt: "2021-06-12",
         url: "https://github.com/ribhav-jain/Portfolio",
         description:
-          "Fully customizable software developer portfolio template that showcases your projects, skills, and comprehensive details as a software developer.",
+          "A fully customizable developer portfolio template to showcase projects, skills, and experience with a sleek, responsive design.",
         languages: [
           { name: "HTML", icon: "vscode-icons:file-type-html" },
           { name: "CSS", icon: "vscode-icons:file-type-css" },
-          { name: "JavaScript", icon: "logos:javascript" },
+          // { name: "JavaScript", icon: "logos:javascript" },
           { name: "React", icon: "logos:react" },
         ],
       },
@@ -404,9 +449,9 @@ const projects = {
         createdAt: "2020-06-18",
         url: "https://github.com/ribhav-jain/Stock-Price-Prediction",
         description:
-          "Predicting stock prices with LSTM-based Recurrent Neural Networks using historical company data.",
+          "Implemented LSTM-based Recurrent Neural Networks to predict stock prices using historical market data, improving forecasting accuracy.",
         languages: [
-          { name: "Tensorflow", icon: "logos:tensorflow" },
+          { name: "TensorFlow", icon: "logos:tensorflow" },
           { name: "Keras", icon: "simple-icons:keras" },
           { name: "Python", icon: "logos:python" },
         ],
@@ -417,7 +462,7 @@ const projects = {
         createdAt: "2019-06-20",
         url: "https://github.com/ribhav-jain/Spam-Classifier",
         description:
-          "Flask app utilizing ML to classify SMS spam with TF-IDF vectorization.",
+          "A Flask-based web app that detects spam messages using machine learning with TF-IDF vectorization for text processing.",
         languages: [
           { name: "Python", icon: "logos:python" },
           { name: "HTML", icon: "vscode-icons:file-type-html" },
@@ -430,9 +475,9 @@ const projects = {
         createdAt: "2018-07-11",
         url: "https://github.com/ribhav-jain/Real-Estate-Price-Prediction",
         description:
-          "Machine Learning model predicts real estate prices with insightful data visualization.",
+          "Built a predictive model for real estate prices using ML techniques, featuring insightful data visualizations for market trends.",
         languages: [
-          { name: "Python", icon: "logos-python" },
+          { name: "Python", icon: "logos:python" },
           { name: "Jupyter Notebook", icon: "logos:jupyter" },
         ],
       },
@@ -443,18 +488,18 @@ const projects = {
 // Contact Page
 const contactPageData = {
   contactSection: {
-    title: "Contact Me",
+    title: "Get in Touch",
     description:
-      "Feel free to get in touch to discuss projects or collaborations. I offer expertise in ML, AI, Data Science, and Full Stack development.",
+      "I'm always open to discussing new projects, collaborations, or consulting opportunities. Whether it's AI, ML, Data Science, or Full Stack development, let's connect and build something amazing together!",
   },
   addressSection: {
-    title: "Address",
+    title: "Location",
     subtitle: "Chandigarh, India",
     location_map_link: "https://goo.gl/maps/oxjdacsf84zp9CAR8",
   },
   phoneSection: {
-    hidden: true,
-    title: "Phone Number",
+    hidden: true, // Set to false if you want to display your phone number
+    title: "Phone",
     subtitle: "1234567890",
   },
 };

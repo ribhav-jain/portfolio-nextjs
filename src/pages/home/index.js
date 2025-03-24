@@ -12,7 +12,7 @@ const TopButton = dynamic(
   {
     loading: () => <p>Loading...</p>,
     ssr: false,
-  }
+  },
 );
 
 export default function Home({ theme }) {

@@ -6,4 +6,11 @@
 
 .footerContent {
   font-family: "Open Sans Medium";
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.footerContent:hover {
+  opacity: 1;
 }

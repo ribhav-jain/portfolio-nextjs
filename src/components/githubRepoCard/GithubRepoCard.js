@@ -11,41 +11,47 @@ const GithubRepoCard = ({ repo, theme }) => {
   };
 
   return (
-    <div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2 }}
-        className={styles.repoCard}
-        onClick={() => openRepoInNewTab(repo.url)}
-        style={{ backgroundColor: theme.highlight }}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className={styles.repoCard}
+      onClick={() => openRepoInNewTab(repo.url)}
+      style={{
+        background: "linear-gradient(135deg, #ffffff, #f0f0f0)",
+      }}
+    >
+      <div className={styles.cardHeader}>
+        <Image
+          src={`/images/book.png`}
+          alt={repo.name}
+          width={40}
+          height={40}
+          objectFit="contain"
+        />
+        <h3
+          className={styles.repoName}
+          style={{ color: theme.text || "#1a1a1a" }}
+        >
+          {repo.name}
+        </h3>
+      </div>
+      <p
+        className={styles.repoDescription}
+        style={{ color: theme.text || "#333" }}
       >
-        <div className={styles.cardHeader}>
-          <Image
-            src={`/images/book.png`}
-            alt={repo.name}
-            width={40}
-            height={40}
-            objectFit="contain"
-          />
-          <h3 className={styles.repoName} style={{ color: theme.text }}>
-            {repo.name}
-          </h3>
-        </div>
-        <p className={styles.repoDescription} style={{ color: theme.text }}>
-          {repo.description}
-        </p>
-        <div className={styles.cardFooter}>
-          <ProjectLanguages logos={repo.languages} />
-          <span
-            className={styles.creationDate}
-            style={{ color: theme.secondaryText }}
-          >
-            Created on {repo.createdAt.split("T")[0]}
-          </span>
-        </div>
-      </motion.div>
-    </div>
+        {repo.description}
+      </p>
+      <div className={styles.cardFooter}>
+        <ProjectLanguages logos={repo.languages} />
+        <span
+          className={styles.creationDate}
+          style={{ color: theme.secondaryText || "#555" }}
+        >
+          Created on {repo.createdAt.split("T")[0]}
+        </span>
+      </div>
+    </motion.div>
   );
 };
 

@@ -62,9 +62,17 @@ export default function ExperienceCard({ experience, theme }) {
             </p>
           </div>
         </div>
-        <p className={styles.description} style={{ color: theme.text }}>
-          {description}
-        </p>
+        <div className={styles.description} style={{ color: theme.text }}>
+          {Array.isArray(description) ? (
+            <ul className={styles.descriptionList}>
+              {description.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            description
+          )}
+        </div>
       </div>
     </motion.div>
   );

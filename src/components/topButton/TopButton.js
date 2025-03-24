@@ -7,33 +7,48 @@ const TopButton = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const threshold = 30;
+      const threshold = 300;
       const scrollTop =
         document.body.scrollTop || document.documentElement.scrollTop;
       setIsVisible(scrollTop > threshold);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    let timeoutId;
+    const throttledScroll = () => {
+      if (timeoutId) return;
+      timeoutId = setTimeout(() => {
+        handleScroll();
+        timeoutId = null;
+      }, 100);
+    };
+
+    window.addEventListener("scroll", throttledScroll);
+    return () => {
+      window.removeEventListener("scroll", throttledScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      duration: 800,
+    });
   };
 
   const buttonStyle = {
     color: chosenTheme.body,
-    backgroundColor: isVisible ? chosenTheme.buttonColor : "transparent",
-    visibility: isVisible ? "visible" : "hidden",
+    backgroundColor: chosenTheme.buttonColor,
   };
 
   return (
     <button
       onClick={scrollToTop}
       style={buttonStyle}
-      className={styles.topButton}
-      title="Go to top"
-      aria-label="Go to top"
+      className={`${styles.topButton} ${isVisible ? styles.visible : ""}`}
+      title="Scroll to top"
+      aria-label="Scroll to top"
     >
       <i className="fas fa-chevron-up" aria-hidden="true" />
     </button>

@@ -12,10 +12,12 @@ const SocialMedia = ({ alignment = "flex-start" }) => {
 
   const handleMouseEnter = (event, color) => {
     event.target.style.color = color;
+    event.target.style.transform = "scale(1.1)";
   };
 
   const handleMouseLeave = (event) => {
     event.target.style.color = "#74808a";
+    event.target.style.transform = "scale(1)";
   };
 
   return (

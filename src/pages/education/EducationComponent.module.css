@@ -7,8 +7,11 @@
 }
 
 .headingSection {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .imageWrapper,
@@ -18,7 +21,7 @@
 }
 
 .imageWrapper > * {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
 }
 

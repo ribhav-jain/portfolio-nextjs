@@ -1,33 +1,60 @@
 .certificationsContainer {
-  /* Additional styles if needed */
+  padding: 3rem 2rem;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 .headerContainer {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.headerContainer::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  border-radius: 2px;
 }
 
 .header {
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 1.2;
   font-family: "Open Sans Regular";
   margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .cardsContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
+  perspective: 1000px;
 }
 
 @media (max-width: 768px) {
+  .certificationsContainer {
+    padding: 3rem 1rem;
+  }
+
   .header {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .headerContainer {
+    margin-bottom: 2rem;
   }
 
   .cardsContainer {
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
   }
 }

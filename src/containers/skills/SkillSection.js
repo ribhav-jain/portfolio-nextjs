@@ -28,28 +28,18 @@ function GetSkillImgLottie(props) {
 export default function SkillSection(props) {
   const theme = props.theme;
 
-  const leftToRightVariant = {
-    offscreen: { x: -100, opacity: 0 },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.1,
-        duration: 1.5,
-      },
+  const fadeInUpVariant = {
+    offscreen: {
+      opacity: 0,
+      y: 30,
     },
-  };
-
-  const rightToLeftVariant = {
-    offscreen: { x: 100, opacity: 0 },
     onscreen: {
-      x: 0,
       opacity: 1,
+      y: 0,
       transition: {
         type: "spring",
+        duration: 1,
         bounce: 0.1,
-        duration: 1.5,
       },
     },
   };
@@ -60,10 +50,10 @@ export default function SkillSection(props) {
         <div key={index} className={styles.skillItem}>
           <motion.div
             className={styles.skillImageWrapper}
-            variants={leftToRightVariant}
+            variants={fadeInUpVariant}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <GetSkillImgLottie fileName={skill.fileName} theme={theme} />
           </motion.div>
@@ -71,26 +61,26 @@ export default function SkillSection(props) {
             <motion.h1
               className={styles.skillHeading}
               style={{ color: theme.text }}
-              variants={rightToLeftVariant}
+              variants={fadeInUpVariant}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               {skill.title}
             </motion.h1>
             <motion.div
-              variants={rightToLeftVariant}
+              variants={fadeInUpVariant}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <SoftwareSkill logos={skill.softwareSkills} />
             </motion.div>
             <motion.div
-              variants={rightToLeftVariant}
+              variants={fadeInUpVariant}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               {skill.skills.map((skillSentence, sentenceIndex) => (
                 <p

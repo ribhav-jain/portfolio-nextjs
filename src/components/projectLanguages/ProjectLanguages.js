@@ -14,9 +14,9 @@ const ProjectLanguages = ({ logos }) => {
             data-for={logo.name}
           >
             <span className="iconify" data-icon={logo.icon}></span>
-            <ReactTooltip id={logo.name} effect="solid">
+            {/* <ReactTooltip id={logo.name} effect="solid">
               {logo.name}
-            </ReactTooltip>
+            </ReactTooltip> */}
           </li>
         ))}
       </ul>

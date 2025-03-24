@@ -3,12 +3,16 @@
 }
 
 .basicContact {
-  margin: 0 5%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem;
 }
 
 .sectionDiv {
   display: flex;
   align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
 }
 
 .headingImgDiv,
@@ -26,18 +30,19 @@
 }
 
 .headingTextDiv h1 {
-  font-size: 56px;
-  font-weight: 400;
+  font-size: 48px;
+  font-weight: 500;
   font-family: "Open Sans Medium";
-  line-height: 1.1;
-  margin-top: 60px;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
   color: var(--text-color);
 }
 
 .headingTextDiv p {
-  font-size: 20px;
-  line-height: 30px;
-  margin: 0 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
   font-family: "Open Sans Medium";
   color: var(--secondary-text-color);
 }
@@ -46,7 +51,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 1.5rem;
 }
 
 @media (max-width: 1380px) {
@@ -56,19 +61,24 @@
 }
 
 @media (max-width: 768px) {
+  .basicContact {
+    padding: 0 1rem;
+  }
+
   .headingTextDiv h1 {
-    font-size: 30px;
-    margin-top: 20px;
+    font-size: 32px;
+    margin-bottom: 1rem;
   }
 
   .sectionDiv {
     flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .headingTextDiv p {
     font-size: 16px;
-    margin: 0;
-    line-height: normal;
+    line-height: 1.5;
     text-align: center;
   }
 }

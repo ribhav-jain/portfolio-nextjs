@@ -12,11 +12,13 @@
   color: #74808a;
   display: flex;
   align-items: center;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .socialIcon:hover {
   color: inherit;
+  transform: translateY(-3px);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 @media (max-width: 768px) {

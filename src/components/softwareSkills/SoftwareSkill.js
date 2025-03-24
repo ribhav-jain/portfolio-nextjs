@@ -27,11 +27,11 @@ const SoftwareSkill = ({ logos }) => {
                 data-inline="false"
               />
             )}
-            {isClient && (
+            {/* {isClient && (
               <ReactTooltip id={logo.skillName} effect="solid">
                 <strong>{logo.skillName}</strong>
               </ReactTooltip>
-            )}
+            )} */}
           </li>
         ))}
       </ul>

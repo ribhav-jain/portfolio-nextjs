@@ -8,6 +8,7 @@ import Educations from "../../containers/education/Educations";
 import Certifications from "../../containers/certifications/Certifications";
 import CompetitiveSites from "../../components/competitiveSites/CompetitiveSites";
 import EducationImg from "./EducationImg";
+import Image from "next/image";
 import { competitiveSites } from "../../portfolio";
 import { chosenTheme } from "../../styles/theme";
 
@@ -25,7 +26,15 @@ export default function Education() {
           className={styles.headingSection}
         >
           <div className={styles.imageWrapper}>
-            <EducationImg theme={theme} />
+            <Image
+              src="/images/education.svg"
+              alt="Education illustration"
+              layout="responsive"
+              width={200} // Original width of image
+              height={200} // Original height of image
+              style={{ objectFit: "contain" }}
+            />
+            {/* <EducationImg theme={theme} /> */}
           </div>
           <div className={styles.textWrapper}>
             <h1 style={{ color: theme.text }}>Education</h1>

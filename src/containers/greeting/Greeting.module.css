@@ -1,12 +1,76 @@
 .greetingContainer {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0 auto;
-  margin-top: 2rem;
+  width: 100%;
+  padding: 50px 0;
+  margin: 0;
+  margin-top: 3rem;
+  position: relative;
+  /* Modern, sophisticated gradient background */
+  background: linear-gradient(135deg, #e8eaf6 0%, #f5f5f5 50%, #e3f2fd 100%);
+  box-shadow: inset 0 0 50px rgba(26, 35, 126, 0.05);
+  border-radius: 16px;
+  overflow: hidden; /* Important for containing pseudo-elements */
 }
 
+/* Add subtle geometric elements */
+.greetingContainer::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 35, 126, 0.03) 0%,
+    rgba(40, 53, 147, 0.03) 100%
+  );
+  z-index: 0;
+}
+
+.greetingContainer::after {
+  content: "";
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 35, 126, 0.02) 0%,
+    rgba(40, 53, 147, 0.02) 100%
+  );
+  z-index: 0;
+}
+
+/* Add a subtle dot pattern */
+.greetingContent::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20%;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(
+    circle,
+    rgba(26, 35, 126, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 10px 10px;
+  z-index: 0;
+}
+
+/* Ensure content stays above background elements */
 .greetingContent {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .greetingTextContainer {
@@ -15,36 +79,89 @@
 }
 
 .greetingTitle {
-  margin-top: 80px;
-  margin-bottom: 20px;
-  font-size: 70px;
-  line-height: 1.1;
-  font-family: "Open Sans Bold";
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 56px;
+  line-height: 1.2;
+  font-family: "Open Sans Bold", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(
+    120deg,
+    #1a237e 0%,
+    #283593 35%,
+    #3949ab 65%,
+    #3f51b5 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(26, 35, 126, 0.1);
+}
+
+.greetingTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(120deg, #1a237e 0%, #283593 70%, #3949ab 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(26, 35, 126, 0.1);
 }
 
 .greetingSubtitle {
-  font-size: 40px;
-  line-height: 40px;
-  margin-right: 40px;
-  font-family: "Open Sans Medium";
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  font-family: "Open Sans Medium", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  color: #2c3e50;
+  opacity: 0.9;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.greetingIllustrationContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+
+.greetingIllustrationContainer:hover {
+  transform: translateY(-10px);
 }
 
 .greetingIllustrationContainer > * {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
 }
 
 .resumeButtonContainer {
   display: flex;
+  margin-top: 32px;
 }
 
 .resumeButton {
-  /* Styles for resume button */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.resumeButton:hover {
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1380px) {
   .greetingTitle {
     font-size: 50px;
+    letter-spacing: -0.4px;
   }
 
   .greetingSubtitle {
@@ -52,26 +169,89 @@
   }
 }
 
-@media (max-width: 768px) {
-  .greetingContent {
-    display: block;
-  }
-
+@media (max-width: 992px) {
   .greetingTitle {
-    font-size: 30px;
-    margin-top: 0px;
-    text-align: center;
+    font-size: 42px;
+    letter-spacing: -0.3px;
   }
 
   .greetingSubtitle {
-    font-size: 16px;
-    margin-right: 0px;
-    line-height: normal;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .greetingContainer {
+    padding: 40px 0;
+    margin-top: 2rem;
+  }
+
+  .greetingContent {
+    width: 90%;
+    padding: 0 16px;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .greetingTextContainer {
     text-align: center;
+    margin-bottom: 0;
+  }
+
+  .greetingTitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .greetingTitle {
+    font-size: 38px;
+    letter-spacing: -0.2px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .greetingSubtitle {
+    font-size: 18px;
+    margin-bottom: 24px;
   }
 
   .resumeButtonContainer {
     width: 100%;
     justify-content: center;
+    margin-top: 24px;
+  }
+
+  .greetingIllustrationContainer {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .greetingIllustrationContainer > * {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .greetingContainer::before {
+    width: 200px;
+    height: 200px;
+  }
+
+  .greetingContainer::after {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .greetingTitle {
+    font-size: 32px;
+  }
+
+  .greetingSubtitle {
+    font-size: 16px;
+  }
+
+  .greetingIllustrationContainer {
+    width: 70%;
   }
 }

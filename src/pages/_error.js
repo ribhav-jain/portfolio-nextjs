@@ -15,9 +15,9 @@ export default function Error({ statusCode }) {
       <Header theme={theme} />
       <div className={styles.errorClass}>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
           <h1 style={{ color: theme.text }}>Oops!</h1>
           <h1 style={{ color: theme.text }} className={styles.error404}>
@@ -34,13 +34,23 @@ export default function Error({ statusCode }) {
                 backgroundColor: theme.buttonColor,
                 border: `solid 1px ${theme.buttonColor}`,
                 display: "inline-flex",
-                padding: "10px 20px",
-                borderRadius: "5px",
+                padding: "12px 24px",
+                borderRadius: "8px",
                 textDecoration: "none",
                 cursor: "pointer",
+                transition: "all 0.3s ease",
+                fontSize: "1.1rem",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
-              Go Home
+              ← Go Back Home
             </span>
           </Link>
         </motion.div>

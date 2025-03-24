@@ -1,13 +1,21 @@
 .experienceContainer {
   width: 100%;
+  min-height: 100vh;
 }
 
 .content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .headingSection {
   display: flex;
   align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
 }
 
 .imageWrapper,
