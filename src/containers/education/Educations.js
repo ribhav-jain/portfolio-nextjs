@@ -17,12 +17,12 @@ const Educations = () => {
       >
         Degrees Received
       </motion.h1>
-      <p
+      {/* <p
         className={styles.educationsIntro}
         style={{ color: chosenTheme.secondaryText }}
       >
         Academic foundation in computer science and engineering.
-      </p>
+      </p> */}
       <div className={styles.degreesList}>
         {degrees.degrees.map((degree, index) => (
           <DegreeCard key={index} degree={degree} theme={chosenTheme} />
