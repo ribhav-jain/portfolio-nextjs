@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font Face Declarations */
 @font-face {
   font-family: "Agustina";
   font-style: normal;
@@ -46,6 +47,7 @@
     url("/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
 }
 
+/* Global Styles */
 html,
 body {
   scroll-behavior: smooth;
@@ -79,6 +81,7 @@ button {
   color: white;
 }
 
+/* Responsive Styles */
 @media (max-width: 1380px) {
   html,
   body {

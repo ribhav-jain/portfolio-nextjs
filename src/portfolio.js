@@ -22,6 +22,7 @@ const greeting = {
     "https://docs.google.com/document/d/13QFW9lmCy23KNn9vGpkVA7TU4W4UQxf4jjWPVhtyIVE/",
   portfolio_repository: "https://github.com/ribhav-jain/Portfolio",
   githubProfile: "https://github.com/ribhav-jain",
+  location: "Chandigarh, India",
 };
 
 // Your Social Media Link
@@ -273,6 +274,7 @@ const degrees = {
     {
       title: "Panjab University Chandigarh",
       subtitle: "B.Tech. in Computer Science & Engineering",
+      summary: "Machine learning, NLP, time series, and data-driven solutions.",
       logo_path: "Panjab_University_logo.png",
       alt_name: "Panjab University Chandigarh",
       duration: "2016 - 2020",
@@ -442,6 +444,7 @@ const projects = {
           // { name: "JavaScript", icon: "logos:javascript" },
           { name: "React", icon: "logos:react" },
         ],
+        featured: true,
       },
       {
         id: "2",
@@ -455,6 +458,7 @@ const projects = {
           { name: "Keras", icon: "simple-icons:keras" },
           { name: "Python", icon: "logos:python" },
         ],
+        featured: true,
       },
       {
         id: "3",
@@ -468,6 +472,7 @@ const projects = {
           { name: "HTML", icon: "vscode-icons:file-type-html" },
           { name: "CSS", icon: "vscode-icons:file-type-css" },
         ],
+        featured: false,
       },
       {
         id: "4",
@@ -480,6 +485,7 @@ const projects = {
           { name: "Python", icon: "logos:python" },
           { name: "Jupyter Notebook", icon: "logos:jupyter" },
         ],
+        featured: false,
       },
     ],
   },
@@ -491,6 +497,7 @@ const contactPageData = {
     title: "Get in Touch",
     description:
       "I'm always open to discussing new projects, collaborations, or consulting opportunities. Whether it's AI, ML, Data Science, or Full Stack development, let's connect and build something amazing together!",
+    email: "ribhavjain4@gmail.com",
   },
   addressSection: {
     title: "Location",
