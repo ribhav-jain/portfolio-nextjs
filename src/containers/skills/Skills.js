@@ -29,6 +29,9 @@ const Skills = () => {
         <h1 className={styles.skillsHeader} style={{ color: chosenTheme.text }}>
           What I Do?
         </h1>
+        <p className={styles.skillsIntro} style={{ color: chosenTheme.secondaryText }}>
+          Interfaces, tools and data solutions focused on clarity.
+        </p>
       </motion.div>
       <SkillSection theme={chosenTheme} />
     </div>

@@ -18,47 +18,46 @@
   margin-top: 1rem;
 }
 
-.skillSectionHeader {
-  text-align: center;
-}
-
-.skillTitle {
-  font-size: 2.5rem;
-  line-height: 1.3;
-  font-family: "Open Sans Regular";
-  margin-bottom: 2rem;
-}
-
 .skillItem {
-  display: flex;
-  overflow: hidden;
-  gap: 30px;
-  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 36px;
 }
 
 .skillItem > * {
-  flex: 1;
+  min-width: 0;
+}
+
+.skillsIntro {
+  max-width: 780px;
+  margin: 0.6rem auto 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: inherit;
+  opacity: 0.9;
 }
 
 .skillImageWrapper > * {
   max-width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .skillHeading {
-  background: linear-gradient(120deg, #1a237e 0%, #4a148c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 42px;
+  color: inherit;
+  font-size: 28px;
   font-weight: 600;
   font-family: "Open Sans Regular";
   line-height: 1.2;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .skillDescriptionWrapper {
-  margin-left: 30px;
+  margin-left: 16px;
   font-family: "Open Sans Regular";
 }
 
@@ -80,8 +79,7 @@
 /* Responsive Styles */
 @media (max-width: 1380px) {
   .skillHeading,
-  .skillsHeader,
-  .skillTitle {
+  .skillsHeader {
     font-size: 36px;
   }
 
@@ -92,9 +90,9 @@
 
 @media (max-width: 768px) {
   .skillItem {
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 40px;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
   }
 
   .skillDescriptionWrapper,
@@ -103,19 +101,18 @@
   }
 
   .skillHeading,
-  .skillsHeader,
-  .skillTitle {
+  .skillsHeader {
     font-size: 28px;
     text-align: center;
   }
 
-  .skillsHeader,
-  .skillTitle {
+  .skillsHeader {
     font-size: 2rem;
   }
 
   .skillImageWrapper {
-    order: 2;
+    order: 2; /* image below title on small screens */
+    text-align: center;
   }
 
   .skillSubTitle {

@@ -17,6 +17,12 @@ const Certifications = ({ theme }) => {
         >
           Certifications
         </motion.h1>
+        <p
+          className={styles.headerIntro}
+          style={{ color: theme.secondaryText }}
+        >
+          Professional credentials and verified skills.
+        </p>
       </div>
       <div className={styles.cardsContainer}>
         {certifications.certifications.map((cert, index) => (

@@ -1,28 +1,27 @@
 .educationsContainer {
-  padding: 3rem 1.5rem;
+  padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  width: 90%;
+  margin-top: 2rem;
 }
 
 .educationsHeader {
-  font-size: 40px;
-  line-height: 1.1;
+  font-size: 2.5rem;
+  line-height: 1.2;
   font-family: "Open Sans Regular";
   text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
 }
 
-.educationsHeader::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70px;
-  height: 4px;
-  background-color: currentColor;
-  border-radius: 2px;
+.educationsIntro {
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0.9;
 }
 
 .degreesList {
@@ -34,18 +33,19 @@
 
 @media (max-width: 1380px) {
   .educationsHeader {
-    font-size: 36px;
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .educationsContainer {
-    padding: 2rem 1rem;
+    padding: 30px 15px;
+    width: 90%;
   }
 
   .educationsHeader {
-    font-size: 30px;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .degreesList {

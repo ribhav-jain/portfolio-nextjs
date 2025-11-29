@@ -46,55 +46,64 @@ export default function SkillSection(props) {
 
   return (
     <div className={styles.skillSectionContainer}>
-      {skills.data.map((skill, index) => (
-        <div key={index} className={styles.skillItem}>
-          <motion.div
-            className={styles.skillImageWrapper}
-            variants={fadeInUpVariant}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.3 }}
+      {skills.data.map((skill, index) => {
+        const titleId = `skill-title-${index}`;
+        return (
+          <article
+            key={index}
+            className={styles.skillItem}
+            role="article"
+            aria-labelledby={titleId}
           >
-            <GetSkillImgLottie fileName={skill.fileName} theme={theme} />
-          </motion.div>
-          <div className={styles.skillDescriptionWrapper}>
-            <motion.h1
-              className={styles.skillHeading}
-              style={{ color: theme.text }}
-              variants={fadeInUpVariant}
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              {skill.title}
-            </motion.h1>
             <motion.div
+              className={styles.skillImageWrapper}
               variants={fadeInUpVariant}
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <SoftwareSkill logos={skill.softwareSkills} />
+              <GetSkillImgLottie fileName={skill.fileName} theme={theme} />
             </motion.div>
-            <motion.div
-              variants={fadeInUpVariant}
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              {skill.skills.map((skillSentence, sentenceIndex) => (
-                <p
-                  key={sentenceIndex}
-                  className={`${styles.skillSubTitle} ${styles.skillText}`}
-                  style={{ color: theme.secondaryText }}
-                >
-                  {skillSentence}
-                </p>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      ))}
+            <div className={styles.skillDescriptionWrapper}>
+              <motion.h2
+                id={titleId}
+                className={styles.skillHeading}
+                style={{ color: theme.text }}
+                variants={fadeInUpVariant}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                {skill.title}
+              </motion.h2>
+              <motion.div
+                variants={fadeInUpVariant}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <SoftwareSkill logos={skill.softwareSkills} />
+              </motion.div>
+              <motion.div
+                variants={fadeInUpVariant}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                {skill.skills.map((skillSentence, sentenceIndex) => (
+                  <p
+                    key={sentenceIndex}
+                    className={`${styles.skillSubTitle} ${styles.skillText}`}
+                    style={{ color: theme.secondaryText }}
+                  >
+                    {skillSentence}
+                  </p>
+                ))}
+              </motion.div>
+            </div>
+          </article>
+        );
+      })}
     </div>
   );
 }
