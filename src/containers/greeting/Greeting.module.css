@@ -1,45 +1,103 @@
 .greetingContainer {
   width: 100%;
-  padding: 56px 0;
+  padding: 50px 0;
   margin: 0;
   margin-top: 3rem;
   position: relative;
-  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 40%, #f0f4ff 100%);
-  border-radius: 18px;
-  box-shadow: 0 10px 40px rgba(26, 35, 126, 0.1);
-  overflow: hidden;
+  /* Modern, sophisticated gradient background */
+  background: linear-gradient(135deg, #e8eaf6 0%, #f5f5f5 50%, #e3f2fd 100%);
+  box-shadow: inset 0 0 50px rgba(26, 35, 126, 0.05);
+  border-radius: 16px;
+  overflow: hidden; /* Important for containing pseudo-elements */
+}
+
+/* Add subtle geometric elements */
+.greetingContainer::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 35, 126, 0.03) 0%,
+    rgba(40, 53, 147, 0.03) 100%
+  );
+  z-index: 0;
+}
+
+.greetingContainer::after {
+  content: "";
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 35, 126, 0.02) 0%,
+    rgba(40, 53, 147, 0.02) 100%
+  );
+  z-index: 0;
+}
+
+/* Add a subtle dot pattern */
+.greetingContent::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20%;
+  width: 100px;
+  height: 100px;
+  background-image: radial-gradient(
+    circle,
+    rgba(26, 35, 126, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 10px 10px;
+  z-index: 0;
 }
 
 /* Ensure content stays above background elements */
 .greetingContent {
   max-width: 1200px;
-  width: 92%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 44px;
+  gap: 40px;
   position: relative;
   z-index: 1;
 }
 
 .greetingTextContainer {
   flex: 1;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
 }
 
 .greetingTitle {
   margin-top: 0;
-  margin-bottom: 18px;
-  font-size: 48px;
-  line-height: 1.08;
+  margin-bottom: 24px;
+  font-size: 56px;
+  line-height: 1.2;
   font-family: "Open Sans Bold", sans-serif;
   font-weight: 800;
-  letter-spacing: -0.4px;
-  background: linear-gradient(120deg, #1a237e 0%, #3949ab 70%, #3f51b5 100%);
+  letter-spacing: -0.5px;
+  background: linear-gradient(
+    120deg,
+    #1a237e 0%,
+    #283593 35%,
+    #3949ab 65%,
+    #3f51b5 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
+  text-shadow: 0 2px 4px rgba(26, 35, 126, 0.1);
 }
 
 .greetingTitle::after {
@@ -47,21 +105,24 @@
   position: absolute;
   bottom: -8px;
   left: 0;
-  width: 72px;
-  height: 4px;
-  background: linear-gradient(120deg, #1a237e 0%, #3949ab 70%, #3f51b5 100%);
-  border-radius: 4px;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(120deg, #1a237e 0%, #283593 70%, #3949ab 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(26, 35, 126, 0.1);
 }
 
 .greetingSubtitle {
-  font-size: 18px;
-  line-height: 1.65;
-  margin-bottom: 18px;
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 32px;
   font-family: "Open Sans Medium", sans-serif;
   font-weight: 500;
-  letter-spacing: 0.1px;
-  color: #324357;
-  opacity: 0.95;
+  letter-spacing: 0.2px;
+  color: #2c3e50;
+  opacity: 0.9;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
 
 .greetingIllustrationContainer {
@@ -69,10 +130,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
 }
 
 .greetingIllustrationContainer:hover {
-  transform: translateY(-6px);
+  transform: translateY(-10px);
 }
 
 .greetingIllustrationContainer > * {
@@ -80,119 +143,115 @@
   height: auto;
 }
 
-.imageWrap {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 12px;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.socialAndButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-}
 .resumeButtonContainer {
   display: flex;
-  margin-top: 0;
+  margin-top: 32px;
 }
 
 .resumeButton {
   position: relative;
   overflow: hidden;
-  transition: transform 0.22s ease;
-  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
 .resumeButton:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1380px) {
   .greetingTitle {
-    font-size: 44px;
+    font-size: 50px;
+    letter-spacing: -0.4px;
   }
-  .imageWrap {
-    max-width: 480px;
+
+  .greetingSubtitle {
+    font-size: 20px;
   }
 }
 
 @media (max-width: 992px) {
-  .greetingContent {
-    gap: 28px;
-    flex-direction: column-reverse;
-  }
   .greetingTitle {
-    font-size: 36px;
+    font-size: 42px;
+    letter-spacing: -0.3px;
   }
-  .imageWrap {
-    max-width: 420px;
+
+  .greetingSubtitle {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
   .greetingContainer {
-    padding: 28px 0;
+    padding: 40px 0;
     margin-top: 2rem;
   }
+
   .greetingContent {
-    width: 94%;
-    padding: 0 14px;
+    width: 90%;
+    padding: 0 16px;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px;
   }
+
   .greetingTextContainer {
     text-align: center;
     margin-bottom: 0;
   }
+
   .greetingTitle::after {
     left: 50%;
     transform: translateX(-50%);
   }
+
   .greetingTitle {
-    font-size: 30px;
-    margin-top: 10px;
+    font-size: 38px;
+    letter-spacing: -0.2px;
+    margin-top: 16px;
+    margin-bottom: 24px;
   }
+
   .greetingSubtitle {
-    font-size: 16px;
-    margin-bottom: 12px;
+    font-size: 18px;
+    margin-bottom: 24px;
   }
+
   .resumeButtonContainer {
     width: 100%;
     justify-content: center;
-    margin-top: 12px;
+    margin-top: 24px;
   }
+
   .greetingIllustrationContainer {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
   }
-  .imageWrap {
-    max-width: 360px;
+
+  .greetingIllustrationContainer > * {
+    max-width: 100%;
+    height: auto;
   }
+
   .greetingContainer::before {
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
   }
+
   .greetingContainer::after {
-    width: 210px;
-    height: 210px;
+    width: 250px;
+    height: 250px;
   }
 }
 
 @media (max-width: 480px) {
   .greetingTitle {
-    font-size: 26px;
+    font-size: 32px;
   }
+
   .greetingSubtitle {
-    font-size: 14px;
+    font-size: 16px;
   }
+
   .greetingIllustrationContainer {
-    width: 85%;
-  }
-  .imageWrap {
-    max-width: 300px;
+    width: 70%;
   }
 }
